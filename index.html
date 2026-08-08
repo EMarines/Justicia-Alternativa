@@ -627,38 +627,40 @@
             <h4>Formulario de Asesoría Gratuita</h4>
             <p>Déjanos tus datos y un especialista en MASC se pondrá en contacto a la brevedad.</p>
 
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/mascchih@gmail.com" method="POST">
+              <input type="hidden" name="_to" value="mascchih@gmail.com">
+              <input type="hidden" name="_subject" value="Nuevo Mensaje de Asesoría - MASC Inmobiliario">
               <div class="form-group">
                 <label for="nombre" class="form-label">Nombre Completo *</label>
-                <input type="text" id="nombre" class="form-control" placeholder="Ej. Lic. Roberto Gómez" required>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Lic. Roberto Gómez" required>
               </div>
 
               <div class="form-group">
                 <label for="telefono" class="form-label">Teléfono WhatsApp *</label>
-                <input type="tel" id="telefono" class="form-control" placeholder="Ej. (614) 532-7446" required>
+                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. (614) 532-7446" required>
               </div>
 
               <div class="form-group">
                 <label for="correo" class="form-label">Correo Electrónico *</label>
-                <input type="email" id="correo" class="form-control" placeholder="mascchih@gmail.com" required>
+                <input type="email" id="correo" name="email" class="form-control" placeholder="mascchih@gmail.com" required>
               </div>
 
               <div class="form-group">
                 <label for="servicio" class="form-label">Tipo de Contrato / Servicio *</label>
-                <select id="servicio" class="form-control" required>
+                <select id="servicio" name="servicio" class="form-control" required>
                   <option value="">Seleccione una opción...</option>
-                  <option value="arrendamiento">Arrendamiento Inmobiliario</option>
-                  <option value="compraventa">Compraventa de Inmueble</option>
-                  <option value="asesoria_general">Asesoría Preventiva General</option>
+                  <option value="Arrendamiento Inmobiliario">Arrendamiento Inmobiliario</option>
+                  <option value="Compraventa de Inmueble">Compraventa de Inmueble</option>
+                  <option value="Asesoría Preventiva General">Asesoría Preventiva General</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="mensaje" class="form-label">Mensaje o Detalle del Inmueble</label>
-                <textarea id="mensaje" class="form-control" placeholder="Describa brevemente su requerimiento..."></textarea>
+                <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Describa brevemente su requerimiento..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary form-btn-submit">
+              <button type="submit" class="btn btn-primary form-btn-submit" id="submitBtn">
                 <span>Solicitar Asesoría Legal Sin Costo</span>
                 <span>➔</span>
               </button>
