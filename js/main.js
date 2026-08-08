@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const formData = new FormData(contactForm);
-        const response = await fetch('https://formspree.io/f/mascchih@gmail.com', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           body: formData,
           headers: {
