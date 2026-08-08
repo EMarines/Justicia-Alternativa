@@ -1,0 +1,19 @@
+{
+  "name": "justicia-alternativa",
+  "version": "1.0.0",
+  "description": "Landing Page MASC Justicia Alternativa Chihuahua",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 3000",
+    "start": "npx serve -l 3000",
+    "build": "echo 'Static site ready'"
+  },
+  "keywords": [
+    "masc",
+    "justicia-alternativa",
+    "chihuahua",
+    "inmobiliario"
+  ],
+  "author": "",
+  "license": "ISC"
+}
