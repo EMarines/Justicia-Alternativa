@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mascsite.vercel.app/podcast" />
   <meta property="og:title" content="🎧 Toca para Escuchar: Blindaje Inmobiliario MASC PACTUM" />
-  <meta property="og:description" content="Presentación interactiva con audio (07:24) · Cosa Juzgada, Desalojo en 3–6 semanas y Comisiones Seguras. Sala PACTUM (614) 551-0188." />
+  <meta property="og:description" content="Presentación interactiva con audio (07:24) · Cosa Juzgada, Desalojo en Semanas y Comisiones Seguras. Sala PACTUM (614) 551-0188." />
   <meta property="og:image" content="https://mascsite.vercel.app/og-image.jpg?v=20261028" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,35 +21,39 @@
   <link rel="icon" type="image/png" href="../logo_pactum.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-deep: #071124;
-      --bg-navy: #0F2347;
+      --bg-deep: #050B18;
+      --bg-navy: #0B1B38;
       --gold: #D4AF37;
       --gold-light: #FDE68A;
-      --gold-grad: linear-gradient(135deg, #FFF7DB 0%, #FDE68A 32%, #D4AF37 72%, #A16207 100%);
+      --gold-ivory: #FFF7DB;
+      --gold-grad: linear-gradient(135deg, #FFF7DB 0%, #FDE68A 35%, #D4AF37 72%, #9A6E12 100%);
+      --plaque-grad: linear-gradient(135deg, #FFF7DB 0%, #F7DF83 25%, #D4AF37 58%, #B48418 85%, #F1D370 100%);
       --cyan: #38BDF8;
       --emerald: #10B981;
       --danger: #F43F5E;
       --text-white: #FFFFFF;
       --text-muted: #CBD5E1;
-      --card-glass: rgba(13, 29, 61, 0.78);
-      --border-gold: rgba(212, 175, 55, 0.48);
+      --card-glass: rgba(8, 19, 42, 0.72);
+      --border-gold: rgba(253, 230, 138, 0.46);
     }
 
     html, body {
       height: 100%;
-      background: radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.22) 0%, transparent 45%),
-                  radial-gradient(circle at 84% 18%, rgba(212, 175, 55, 0.25) 0%, transparent 45%),
-                  linear-gradient(180deg, #091731 0%, #050C1A 100%);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 84% 18%, rgba(212, 175, 55, 0.18) 0%, transparent 45%),
+        linear-gradient(180deg, #071226 0%, #030711 100%);
       color: var(--text-white);
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body {
@@ -61,20 +65,32 @@
       padding: 12px;
     }
 
-    /* MAIN VERTICAL DECK FRAME (9:16 social feel on desktop, full-bleed on mobile) */
+    /* MAIN VERTICAL DECK FRAME (9:16 Luxury Editorial Dossier) */
     .story-shell {
       position: relative;
       width: 100%;
-      max-width: 460px;
-      min-height: min(860px, calc(100dvh - 24px));
-      background: linear-gradient(165deg, rgba(16, 36, 74, 0.95) 0%, rgba(7, 17, 36, 0.98) 100%);
+      max-width: 470px;
+      min-height: min(880px, calc(100dvh - 24px));
+      background: #050B18;
       border: 1.5px solid var(--border-gold);
-      border-radius: 26px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.65), 0 0 40px rgba(212, 175, 55, 0.14);
+      border-radius: 28px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.78), 0 0 44px rgba(212, 175, 55, 0.15);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Interior 1px Private-Banking Perimeter Hairline */
+    .story-shell::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 21px;
+      pointer-events: none;
+      z-index: 4;
     }
 
     @media (max-width: 500px) {
@@ -86,12 +102,52 @@
         border-left: none;
         border-right: none;
       }
+      .story-shell::after {
+        inset: 6px;
+        border-radius: 14px;
+      }
+    }
+
+    /* DYNAMIC ARCHITECTURAL PHOTOGRAPHY LAYERS */
+    .bg-stack {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-layer {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 28%;
+      opacity: 0;
+      transform: scale(1.06);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 5.5s ease-out;
+      filter: contrast(1.06) saturate(0.92);
+    }
+
+    .bg-layer.active {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+
+    .bg-vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 12%, rgba(212, 175, 55, 0.16) 0%, transparent 42%),
+        linear-gradient(180deg, rgba(6, 13, 28, 0.88) 0%, rgba(8, 19, 42, 0.70) 46%, rgba(5, 11, 24, 0.96) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
     /* TOP STORY PROGRESS BARS + BRAND HEADER */
     .top-zone {
-      padding: 12px 16px 8px;
-      background: linear-gradient(180deg, rgba(5, 12, 26, 0.92) 0%, rgba(5, 12, 26, 0) 100%);
+      position: relative;
+      padding: 14px 18px 8px;
+      background: linear-gradient(180deg, rgba(4, 10, 22, 0.88) 0%, rgba(4, 10, 22, 0) 100%);
       z-index: 10;
     }
 
@@ -99,7 +155,7 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 5px;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
 
     .story-bar {
@@ -116,6 +172,7 @@
       width: 0%;
       background: var(--gold-grad);
       border-radius: 99px;
+      box-shadow: 0 0 8px rgba(253, 230, 138, 0.5);
       transition: width 0.18s linear;
     }
 
@@ -123,7 +180,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
     }
 
     .brand-left {
@@ -131,88 +188,138 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
+      min-width: 0;
     }
 
-    .brand-left img {
-      height: 34px;
-      width: auto;
+    .brand-crest-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(10, 22, 46, 0.78);
+      border: 1px solid rgba(253, 230, 138, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-crest-box img {
+      height: 29px;
+      width: 29px;
       object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+      filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
     }
 
     .brand-titles h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.84rem;
+      font-size: 0.80rem;
       font-weight: 900;
       background: var(--gold-grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 0.4px;
+      white-space: nowrap;
     }
 
     .brand-titles p {
-      font-size: 0.67rem;
+      font-size: 0.63rem;
       color: var(--text-muted);
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .judicial-mini-seals {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      background: rgba(8, 19, 42, 0.62);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .judicial-mini-seals img {
+      height: 22px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.9;
     }
 
     .share-pill {
-      background: rgba(212, 175, 55, 0.16);
+      background: rgba(212, 175, 55, 0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border-gold);
       color: var(--gold-light);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 6px 11px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 6px 10px;
       border-radius: 99px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       transition: all 0.2s ease;
     }
 
     .share-pill:hover {
-      background: rgba(212, 175, 55, 0.3);
+      background: rgba(212, 175, 55, 0.32);
       transform: translateY(-1px);
     }
 
     /* CHAPTER PILLS */
     .chapter-strip {
+      position: relative;
+      z-index: 10;
       display: flex;
       gap: 6px;
       overflow-x: auto;
-      padding: 4px 16px 6px;
+      padding: 4px 18px 6px;
       scrollbar-width: none;
     }
     .chapter-strip::-webkit-scrollbar { display: none; }
 
     .chap-btn {
       flex: 0 0 auto;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(8, 19, 42, 0.64);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       color: #CBD5E1;
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       font-weight: 600;
-      padding: 5px 10px;
+      padding: 5px 11px;
       border-radius: 99px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.22s ease;
       white-space: nowrap;
     }
 
     .chap-btn.active {
       background: var(--gold-grad);
-      color: #071124;
-      border-color: transparent;
+      color: #061022;
+      border-color: #FFF7DB;
       font-weight: 800;
-      box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 3px 14px rgba(212, 175, 55, 0.42);
     }
 
     /* SLIDES STAGE */
     .slides-stage {
       flex: 1;
       position: relative;
-      padding: 8px 18px;
+      z-index: 10;
+      padding: 6px 18px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -221,8 +328,8 @@
     .slide-card {
       display: none;
       flex-direction: column;
-      gap: 12px;
-      animation: fadeSlide 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+      gap: 11px;
+      animation: fadeSlide 0.42s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .slide-card.active {
@@ -236,129 +343,230 @@
 
     .kicker-badge {
       align-self: flex-start;
-      background: rgba(56, 189, 248, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      color: #7DD3FC;
-      font-size: 0.68rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(10, 23, 48, 0.82) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(253, 230, 138, 0.52);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.64rem;
       font-weight: 800;
-      letter-spacing: 0.8px;
+      letter-spacing: 1.3px;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 4px 11px;
       border-radius: 99px;
+    }
+
+    .kicker-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FDE68A;
+      box-shadow: 0 0 8px #FDE68A;
     }
 
     .slide-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.35rem;
-      line-height: 1.2;
+      font-size: 1.34rem;
+      line-height: 1.18;
       font-weight: 900;
+      letter-spacing: -0.015em;
       color: #FFFFFF;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
     }
 
-    .slide-title span.gold {
+    .slide-title em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 1.44rem;
       background: var(--gold-grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      padding-right: 5px;
     }
 
     .slide-sub {
-      font-size: 0.84rem;
+      font-size: 0.81rem;
       color: #E2E8F0;
-      line-height: 1.45;
+      line-height: 1.42;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
     }
 
+    /* FROSTED LUXURY DOSSIER CARDS */
     .feature-box {
-      background: rgba(7, 17, 36, 0.68);
-      border: 1px solid rgba(212, 175, 55, 0.34);
-      border-radius: 16px;
-      padding: 12px 14px;
+      position: relative;
+      background: rgba(7, 17, 36, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(253, 230, 138, 0.36);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 12px 14px 12px 16px;
       display: flex;
       flex-direction: column;
       gap: 9px;
+      overflow: hidden;
+    }
+
+    .feature-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: var(--gold-grad);
     }
 
     .feature-item {
       display: flex;
       align-items: flex-start;
-      gap: 9px;
-      font-size: 0.8rem;
+      gap: 10px;
+      font-size: 0.79rem;
       line-height: 1.38;
       color: #F1F5F9;
     }
 
-    .feature-icon {
-      font-size: 1rem;
-      line-height: 1.1;
+    .feature-item strong {
+      color: #FFF7DB;
+      font-weight: 700;
+    }
+
+    .kpi-mini-pill {
       flex-shrink: 0;
+      min-width: 68px;
+      text-align: center;
+      padding: 3px 7px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 800;
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid rgba(253, 230, 138, 0.42);
+      color: var(--gold-light);
+      margin-top: 1px;
+    }
+
+    .kpi-mini-pill.emerald {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: rgba(110, 231, 183, 0.45);
+      color: #6EE7B7;
+    }
+
+    .kpi-mini-pill.cyan {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: rgba(125, 211, 252, 0.45);
+      color: #7DD3FC;
     }
 
     /* VS COMPARISON BARS */
     .vs-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 9px;
+      gap: 10px;
     }
 
     .vs-col {
-      border-radius: 14px;
-      padding: 11px;
+      position: relative;
+      border-radius: 16px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
       gap: 5px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42);
+      overflow: hidden;
     }
 
     .vs-col.bad {
-      background: rgba(244, 63, 94, 0.12);
-      border: 1px solid rgba(244, 63, 94, 0.4);
+      background: linear-gradient(145deg, rgba(64, 16, 32, 0.78) 0%, rgba(10, 18, 36, 0.85) 100%);
+      border: 1px solid rgba(251, 113, 133, 0.45);
     }
 
     .vs-col.good {
-      background: rgba(16, 185, 129, 0.14);
-      border: 1px solid rgba(212, 175, 55, 0.65);
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.14);
+      background: linear-gradient(145deg, rgba(10, 46, 38, 0.80) 0%, rgba(10, 20, 40, 0.86) 100%);
+      border: 1.5px solid rgba(253, 230, 138, 0.65);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.48), 0 0 18px rgba(212, 175, 55, 0.16);
     }
 
     .vs-tag {
-      font-size: 0.66rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.63rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.7px;
     }
 
     .vs-col.bad .vs-tag { color: #FDA4AF; }
     .vs-col.good .vs-tag { color: var(--gold-light); }
 
     .vs-metric {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 900;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.1;
     }
+    .vs-col.bad .vs-metric { color: #FFE4E6; }
+    .vs-col.good .vs-metric { color: #6EE7B7; }
 
     .vs-desc {
       font-size: 0.73rem;
-      color: #CBD5E1;
-      line-height: 1.3;
+      color: #E2E8F0;
+      line-height: 1.32;
     }
 
     .photo-strip {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 9px;
     }
 
-    .photo-strip img {
+    .photo-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(253, 230, 138, 0.55);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      height: 102px;
+    }
+
+    .photo-card img {
       width: 100%;
-      height: 82px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid var(--border-gold);
+      object-position: center 14%;
+    }
+
+    .photo-card span {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 12px 7px 4px;
+      background: linear-gradient(180deg, transparent, rgba(4, 10, 22, 0.92));
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.56rem;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      color: var(--gold-light);
+      text-transform: uppercase;
     }
 
     /* LIVE KARAOKE SUBTITLES + WAVEFORM AUDIO DECK */
     .audio-deck {
+      position: relative;
+      z-index: 10;
       margin: 4px 16px 8px;
-      background: rgba(5, 12, 26, 0.85);
-      border: 1px solid rgba(212, 175, 55, 0.42);
+      background: rgba(4, 10, 22, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.44);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 247, 219, 0.10);
       border-radius: 18px;
       padding: 10px 13px;
       display: flex;
@@ -372,12 +580,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 0.82rem;
+      font-size: 0.81rem;
       font-weight: 700;
-      color: var(--gold-light);
+      color: var(--gold-ivory);
       line-height: 1.32;
-      padding: 2px 4px;
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+      padding: 2px 6px;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
     }
 
     .wave-row {
@@ -390,17 +598,17 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: none;
+      border: 1.5px solid #FFF7DB;
       background: var(--gold-grad);
-      color: #071124;
-      font-size: 1.1rem;
+      color: #061022;
+      font-size: 1.05rem;
       font-weight: 900;
       cursor: pointer;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.52);
       transition: transform 0.15s ease;
     }
 
@@ -414,9 +622,10 @@
     }
 
     .time-badge {
-      font-size: 0.7rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
       font-variant-numeric: tabular-nums;
-      color: #CBD5E1;
+      color: #E2E8F0;
       font-weight: 700;
       flex-shrink: 0;
     }
@@ -432,7 +641,7 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.18);
       color: #F8FAFC;
-      font-size: 0.72rem;
+      font-size: 0.71rem;
       font-weight: 700;
       padding: 5px 11px;
       border-radius: 99px;
@@ -443,24 +652,29 @@
     .nav-slide-btn:hover { background: rgba(255, 255, 255, 0.18); }
 
     .speed-btn {
-      background: rgba(56, 189, 248, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: #7DD3FC;
-      font-size: 0.7rem;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(253, 230, 138, 0.42);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
       font-weight: 800;
-      padding: 4px 9px;
+      padding: 4px 10px;
       border-radius: 99px;
       cursor: pointer;
     }
 
-    /* OFFICIAL PACTUM CONTACT BANNER (ALWAYS VISIBLE) */
+    /* OFFICIAL PACTUM JEWEL CONTACT PLAQUE (ALWAYS VISIBLE) */
     .pactum-footer {
-      background: var(--gold-grad);
-      color: #071124;
-      padding: 10px 14px 12px;
+      position: relative;
+      z-index: 12;
+      background: var(--plaque-grad);
+      color: #061022;
+      padding: 10px 15px 12px;
+      border-top: 1.5px solid #FFF7DB;
+      box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
 
     .pactum-cta-row {
@@ -474,45 +688,62 @@
       display: flex;
       flex-direction: column;
       gap: 1px;
+      min-width: 0;
     }
 
     .pactum-info strong {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.73rem;
       font-weight: 900;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
+      color: #061022;
     }
 
     .pactum-info span {
-      font-size: 0.67rem;
+      font-size: 0.66rem;
+      font-weight: 700;
+      color: #16243E;
+    }
+
+    .pactum-endorsement-micro {
+      font-size: 0.60rem;
       font-weight: 700;
       color: #1E293B;
+      letter-spacing: 0.2px;
+      border-top: 1px solid rgba(6, 16, 34, 0.16);
+      padding-top: 3px;
     }
 
     .wa-cta-btn {
-      background: #071124;
+      background: linear-gradient(180deg, #0B1D3F 0%, #050C1B 100%);
+      border: 1.5px solid #FFF7DB;
       color: var(--gold-light);
       text-decoration: none;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.74rem;
-      font-weight: 800;
+      font-weight: 900;
       padding: 8px 13px;
       border-radius: 99px;
       display: inline-flex;
       align-items: center;
       gap: 5px;
       white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(7, 17, 36, 0.35);
+      box-shadow: 0 5px 14px rgba(5, 12, 27, 0.42);
       transition: transform 0.15s ease;
+      flex-shrink: 0;
     }
 
     .wa-cta-btn:hover { transform: scale(1.03); }
 
-    /* INITIAL CLICK-TO-LISTEN OVERLAY */
+    /* INITIAL CLICK-TO-LISTEN LUXURY OVERLAY */
     .start-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 35%, rgba(22, 49, 98, 0.96) 0%, rgba(5, 12, 26, 0.99) 100%);
+      background:
+        radial-gradient(circle at 50% 25%, rgba(212, 175, 55, 0.18) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(7, 17, 36, 0.90) 0%, rgba(4, 9, 20, 0.97) 100%);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       z-index: 50;
       display: flex;
       flex-direction: column;
@@ -520,8 +751,8 @@
       justify-content: center;
       text-align: center;
       padding: 28px 24px;
-      gap: 16px;
-      transition: opacity 0.35s ease, visibility 0.35s ease;
+      gap: 15px;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
     }
 
     .start-overlay.hidden {
@@ -531,20 +762,39 @@
     }
 
     .start-logo {
-      height: 76px;
+      height: 78px;
       width: auto;
-      filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.55));
+      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.55));
+    }
+
+    .start-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.48rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #FFFFFF;
+    }
+
+    .start-title em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 1.62rem;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-right: 5px;
     }
 
     .pulse-ring-btn {
-      margin-top: 6px;
+      margin-top: 4px;
       background: var(--gold-grad);
-      color: #071124;
-      border: none;
+      color: #061022;
+      border: 1.5px solid #FFF7DB;
       border-radius: 99px;
       padding: 15px 28px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       font-weight: 900;
       cursor: pointer;
       display: inline-flex;
@@ -560,39 +810,64 @@
       100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); transform: scale(1); }
     }
 
+    .overlay-seals-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0.9;
+    }
+    .overlay-seals-row img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
     .overlay-pactum-box {
-      margin-top: 8px;
-      padding: 10px 16px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.05);
+      margin-top: 4px;
+      padding: 11px 16px;
+      border-radius: 16px;
+      background: rgba(8, 19, 42, 0.72);
       border: 1px solid var(--border-gold);
-      font-size: 0.74rem;
+      font-size: 0.73rem;
       color: #E2E8F0;
-      line-height: 1.45;
+      line-height: 1.48;
     }
   </style>
 </head>
 <body>
 
-  <main class="story-shell">
+  <main class="story-shell" id="storyShell">
+    <!-- DYNAMIC LUXURY ARCHITECTURAL BACKGROUNDS -->
+    <div class="bg-stack" aria-hidden="true">
+      <div class="bg-layer active" id="bg-judicial" style="background-image: url('bg_judicial.jpg');"></div>
+      <div class="bg-layer" id="bg-penthouse" style="background-image: url('bg_penthouse.jpg');"></div>
+      <div class="bg-layer" id="bg-desk" style="background-image: url('bg_desk.jpg');"></div>
+    </div>
+    <div class="bg-vignette" aria-hidden="true"></div>
+
     <!-- CLICK-TO-PLAY COVER OVERLAY -->
     <div class="start-overlay" id="startOverlay">
       <img src="../logo_pactum_gold.png" alt="Sala PACTUM Chihuahua" class="start-logo" />
-      <span class="kicker-badge">🎧 Podcast & Presentación Interactiva</span>
-      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.48rem; font-weight: 900; line-height: 1.2;">
-        Blindaje Inmobiliario con Fuerza de <span style="color: var(--gold-light);">Cosa Juzgada</span>
+      <span class="kicker-badge">Podcast & Dossier Interactivo</span>
+      <h2 class="start-title">
+        Blindaje Inmobiliario con Fuerza de <em>Cosa Juzgada</em>
       </h2>
-      <p style="font-size: 0.86rem; color: #CBD5E1; max-width: 340px; line-height: 1.5;">
-        Toca el botón para escuchar la conversación mientras avanzan las 6 láminas ejecutivas (o desliza al tema que prefieras).
+      <p style="font-size: 0.84rem; color: #CBD5E1; max-width: 345px; line-height: 1.5;">
+        Toca el botón para escuchar el análisis completo mientras avanzan las 6 láminas ejecutivas (o desliza al capítulo que prefieras).
       </p>
 
       <button class="pulse-ring-btn" id="btnStartExperience">
         <span>▶</span> Escuchar Presentación (07:24)
       </button>
 
+      <div class="overlay-seals-row">
+        <img src="../assets_multimedia/logo_ija_oficial_white.png" alt="IJA Chihuahua" />
+        <img src="../assets_multimedia/logo_tsje_chihuahua_white.png" alt="Poder Judicial TSJE Chihuahua" />
+      </div>
+
       <div class="overlay-pactum-box">
-        <strong style="color: var(--gold-light);">🏛️ Sala PACTUM Mediación Privada</strong><br />
-        Autorizada por el IJA · Poder Judicial del Estado de Chihuahua<br />
+        <strong style="color: var(--gold-light);">🏛️ Sala PACTUM Mediación Privada · Chihuahua</strong><br />
+        Centro Autorizado por el IJA · Poder Judicial del Estado<br />
         📍 C. Miguel Ahumada #153, Col. Industrial · 💬 <strong>(614) 551-0188</strong>
       </div>
     </div>
@@ -610,15 +885,23 @@
 
       <div class="brand-row">
         <a href="../index.html" class="brand-left" title="Ir al sitio completo MASC PACTUM">
-          <img src="../logo_pactum_gold.png" alt="PACTUM" />
+          <div class="brand-crest-box">
+            <img src="../logo_pactum_gold.png" alt="PACTUM" />
+          </div>
           <div class="brand-titles">
             <h1>MASC PACTUM CHIHUAHUA</h1>
-            <p>Sala Privada Autorizada IJA · TSJE</p>
+            <p>Mediación Privada Autorizada</p>
           </div>
         </a>
-        <button class="share-pill" onclick="sharePresentation()">
-          <span>📲</span> Compartir
-        </button>
+        <div class="header-actions">
+          <div class="judicial-mini-seals" title="Autorizado por IJA · Poder Judicial TSJE Chihuahua">
+            <img src="../assets_multimedia/logo_ija_oficial_white.png" alt="IJA" />
+            <img src="../assets_multimedia/logo_tsje_chihuahua_white.png" alt="TSJE" />
+          </div>
+          <button class="share-pill" onclick="sharePresentation()">
+            <span>📲</span> Compartir
+          </button>
+        </div>
       </div>
     </div>
 
@@ -632,138 +915,144 @@
       <button class="chap-btn" onclick="jumpToSlide(5)">6. Sala Pactum</button>
     </div>
 
-    <!-- 6 SYNCHRONIZED VISUAL SLIDES -->
+    <!-- 6 SYNCHRONIZED EDITORIAL SLIDES -->
     <section class="slides-stage" id="slidesStage">
 
-      <!-- SLIDE 1: 00:00 - 02:16 -->
-      <article class="slide-card active" data-index="0">
-        <span class="kicker-badge">Lámina 1 de 6 · Respaldo Judicial</span>
-        <h2 class="slide-title">Chihuahua es Pionero: <span class="gold">Todo el Peso del Poder Judicial</span></h2>
-        <p class="slide-sub">No es un acuerdo informal de buena fe: está regulado y supervisado directamente por el Tribunal Superior de Justicia.</p>
+      <!-- SLIDE 1: 00:00 - 02:17 (bg: judicial) -->
+      <article class="slide-card active" data-index="0" data-bg="judicial">
+        <span class="kicker-badge">Cápsula 01 / 06 · Poder Judicial en Chihuahua</span>
+        <h2 class="slide-title">No es buena fe: es <em>Poder Judicial Real</em></h2>
+        <p class="slide-sub">Regulado y supervisado directamente por el Instituto de Justicia Alternativa (IJA) del Tribunal Superior de Justicia.</p>
         <div class="feature-box">
           <div class="feature-item">
-            <span class="feature-icon">🏛️</span>
-            <div><strong>Instituto de Justicia Alternativa (IJA):</strong> Órgano desconcentrado del TSJE de Chihuahua.</div>
+            <span class="kpi-mini-pill cyan">2006</span>
+            <div><strong>Chihuahua Líder Nacional:</strong> Primer estado en integrar justicia alternativa con plena validez legal.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">⚖️</span>
-            <div><strong>Sustento Constitucional:</strong> Art. 17 Constitucional y Ley de Justicia Alternativa Estatal.</div>
+            <span class="kpi-mini-pill">Art. 17</span>
+            <div><strong>Rango Constitucional:</strong> Reforma Federal 2008 y creación del IJA y Ley Estatal MASC (2014–2015).</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">⚡</span>
-            <div><strong>Cero Juzgados Saturados:</strong> Solución pacífica, humana y ejecutiva sin juicios eternos.</div>
+            <span class="kpi-mini-pill emerald">100% Ley</span>
+            <div><strong>Cero Juzgados Saturados:</strong> Justicia preventiva rápida, humana y con todo el respaldo del TSJE.</div>
           </div>
         </div>
       </article>
 
-      <!-- SLIDE 2: 02:16 - 03:08 -->
-      <article class="slide-card" data-index="1">
-        <span class="kicker-badge">Lámina 2 de 6 · Blindaje Preventivo</span>
-        <h2 class="slide-title">El Poder de <span class="gold">"Cosa Juzgada"</span> desde el Minuto Cero</h2>
-        <p class="slide-sub">Se firma el mismo día que tu contrato de arrendamiento o promesa de compraventa, antes de cualquier conflicto.</p>
+      <!-- SLIDE 2: 02:17 - 03:09.5 (bg: penthouse) -->
+      <article class="slide-card" data-index="1" data-bg="penthouse">
+        <span class="kicker-badge">Cápsula 02 / 06 · Fuerza de Cosa Juzgada</span>
+        <h2 class="slide-title">Tu contrato nace como <em>Sentencia Definitiva</em></h2>
+        <p class="slide-sub">Se celebra el mismo día que firmas tu contrato de arrendamiento o promesa de compraventa, antes de cualquier conflicto.</p>
         <div class="feature-box">
           <div class="feature-item">
-            <span class="feature-icon">📜</span>
-            <div><strong>Fuerza de Sentencia Definitiva:</strong> Equivale legalmente a la resolución final dictada por un Juez Civil.</div>
+            <span class="kpi-mini-pill">Día 1</span>
+            <div><strong>Cosa Juzgada Automática:</strong> Equivale legalmente a la sentencia ejecutoriada de un Juez Civil.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">🛡️</span>
-            <div><strong>Inatacable:</strong> Sobre la Cosa Juzgada no caben apelaciones dilatorias ni juicios largos.</div>
+            <span class="kpi-mini-pill emerald">0 Amparos</span>
+            <div><strong>Ejecución Inapelable:</strong> Sin apelaciones ni chicanas dilatorias; caso cerrado desde la firma.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">⏱️</span>
-            <div><strong>100% Preventivo:</strong> Blindas el inmueble desde el Día 1 de la operación.</div>
+            <span class="kpi-mini-pill cyan">Minuto 0</span>
+            <div><strong>Escudo Preventivo:</strong> Blindas llaves, rentas y patrimonio antes de que exista desacuerdo.</div>
           </div>
         </div>
       </article>
 
-      <!-- SLIDE 3: 03:08 - 04:20 -->
-      <article class="slide-card" data-index="2">
-        <span class="kicker-badge">Lámina 3 de 6 · Arrendamiento Seguro</span>
-        <h2 class="slide-title">Desalojo en Semanas vs. <span class="gold">Pólizas Jurídicas</span></h2>
-        <p class="slide-sub">La póliza tradicional solo paga un abogado para pelear 2 años en juzgados; MASC Pactum evita el juicio por completo.</p>
+      <!-- SLIDE 3: 03:09.5 - 04:21.5 (bg: desk) -->
+      <article class="slide-card" data-index="2" data-bg="desk">
+        <span class="kicker-badge">Cápsula 03 / 06 · Arrendamiento Sin Pesadillas</span>
+        <h2 class="slide-title">La póliza paga pleitos; Pactum <em>devuelve tu casa</em></h2>
+        <p class="slide-sub">La póliza tradicional solo paga abogado para litigar años en corte; MASC Pactum evita el juicio por completo.</p>
         <div class="vs-grid">
           <div class="vs-col bad">
-            <span class="vs-tag">❌ Juicio / Póliza</span>
+            <span class="vs-tag">✕ Juicio / Póliza</span>
             <div class="vs-metric">12 a 24 Meses</div>
-            <p class="vs-desc">Desgaste, rentas perdidas y pleito ordinario saturado.</p>
+            <p class="vs-desc">Desgaste emocional, inmueble congelado y juzgados saturados.</p>
           </div>
           <div class="vs-col good">
-            <span class="vs-tag">✅ MASC PACTUM</span>
-            <div class="vs-metric">3 a 6 Semanas</div>
-            <p class="vs-desc">Ejecución directa con juez por <strong>Vía de Apremio</strong>.</p>
+            <span class="vs-tag">✓ MASC PACTUM</span>
+            <div class="vs-metric">En Semanas</div>
+            <p class="vs-desc">Desalojo express directo ante juez por <strong>Vía de Apremio</strong>.</p>
           </div>
         </div>
-        <div class="feature-box" style="padding: 9px 12px;">
+        <div class="feature-box" style="padding: 10px 13px 10px 15px;">
           <div class="feature-item">
-            <span class="feature-icon">💰</span>
-            <div><strong>Cobro de Rentas Caídas:</strong> Solicitud directa de embargo de cuentas o bienes ante incumplimiento.</div>
+            <span class="kpi-mini-pill emerald">Embargo</span>
+            <div><strong>Rentas Caídas Garantizadas:</strong> Solicitud directa al juez de embargo de cuentas o bienes.</div>
           </div>
         </div>
       </article>
 
-      <!-- SLIDE 4: 04:20 - 05:09 -->
-      <article class="slide-card" data-index="3">
-        <span class="kicker-badge">Lámina 4 de 6 · Compraventas</span>
-        <h2 class="slide-title">Escudo Legal Rumbo a la <span class="gold">Escritura Notarial</span></h2>
-        <p class="slide-sub">No sustituye al Notario Público: protege el periodo crítico entre la Promesa de Compraventa y la firma definitiva.</p>
+      <!-- SLIDE 4: 04:21.5 - 05:10.6 (bg: judicial) -->
+      <article class="slide-card" data-index="3" data-bg="judicial">
+        <span class="kicker-badge">Cápsula 04 / 06 · Compraventas Sin Riesgo</span>
+        <h2 class="slide-title">El escudo invencible antes de <em>firmar en Notaría</em></h2>
+        <p class="slide-sub">Complemento perfecto del Notario Público: blinda el puente crítico entre la Promesa de Compraventa y la Escritura.</p>
         <div class="feature-box">
           <div class="feature-item">
-            <span class="feature-icon">🔑</span>
-            <div><strong>Entrega Física Garantizada:</strong> Certeza total en fechas y condiciones de entrega del inmueble.</div>
+            <span class="kpi-mini-pill">Posesión</span>
+            <div><strong>Entrega Física Exacta:</strong> Certeza total sobre cuándo y en qué estado recibes la propiedad.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">📑</span>
-            <div><strong>Penalizaciones 100% Ejecutables:</strong> Si alguien se retracta, las cláusulas se ejecutan sin juicio.</div>
+            <span class="kpi-mini-pill emerald">100% Firme</span>
+            <div><strong>Penalizaciones Ejecutables:</strong> Si alguien se arrepiente, las sanciones se ejecutan de inmediato.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">🔍</span>
-            <div><strong>Vicios Ocultos:</strong> Canal privado, confidencial y ágil de mediación sin escándalos judiciales.</div>
+            <span class="kpi-mini-pill cyan">Privado</span>
+            <div><strong>Vicios Ocultos:</strong> Mediación confidencial y ágil sin escándalos ni litigios públicos.</div>
           </div>
         </div>
       </article>
 
-      <!-- SLIDE 5: 05:09 - 06:01 -->
-      <article class="slide-card" data-index="4">
-        <span class="kicker-badge">Lámina 5 de 6 · Gremio Inmobiliario</span>
-        <h2 class="slide-title">Oro Molido para Asesores: <span class="gold">Comisiones Blindadas</span></h2>
-        <p class="slide-sub">Eliminas el miedo del propietario y das trato digno y transparente al inquilino o comprador.</p>
+      <!-- SLIDE 5: 05:10.6 - 06:02.0 (bg: penthouse) -->
+      <article class="slide-card" data-index="4" data-bg="penthouse">
+        <span class="kicker-badge">Cápsula 05 / 06 · Oro Molido Inmobiliario</span>
+        <h2 class="slide-title">Cero operaciones caídas: <em>blinda tu comisión</em> hoy</h2>
+        <p class="slide-sub">Destrabas el miedo del propietario de última hora y brindas trato imparcial y humano al comprador o inquilino.</p>
         <div class="feature-box">
           <div class="feature-item">
-            <span class="feature-icon">🤝</span>
-            <div><strong>Cero Operaciones Caídas:</strong> Evitas que el trato se rompa a última hora por miedo o desconfianza.</div>
+            <span class="kpi-mini-pill">Honorarios</span>
+            <div><strong>100% Comisión Cobrada:</strong> Evitas que meses de prospección se caigan antes de firmar.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">🏆</span>
-            <div><strong>Diferenciador Premium:</strong> Ofreces cierres respaldados por el IJA y el Poder Judicial en Chihuahua.</div>
+            <span class="kpi-mini-pill cyan">IJA · TSJE</span>
+            <div><strong>Prestigio Premium:</strong> Diferenciador de alto valor frente a cualquier asesor tradicional.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">💎</span>
-            <div><strong>Ganar-Ganar Real:</strong> Patrimonio seguro para el dueño + reglas claras para el cliente + tu comisión firme.</div>
+            <span class="kpi-mini-pill emerald">Simetría</span>
+            <div><strong>Ganar-Ganar Real:</strong> Patrimonio blindado + reglas justas + cierre inmobiliario impecable.</div>
           </div>
         </div>
       </article>
 
-      <!-- SLIDE 6: 06:01 - 07:24 -->
-      <article class="slide-card" data-index="5">
-        <span class="kicker-badge">Lámina 6 de 6 · Cómo Ejecutarlo</span>
-        <h2 class="slide-title">3 Pasos Simples en <span class="gold">Sala Privada PACTUM</span></h2>
+      <!-- SLIDE 6: 06:02.0 - 07:25.0 (bg: desk) -->
+      <article class="slide-card" data-index="5" data-bg="desk">
+        <span class="kicker-badge">Cápsula 06 / 06 · Cierre VIP Sala Pactum</span>
+        <h2 class="slide-title">3 pasos sin filas para <em>blindar tu cierre</em></h2>
         <div class="photo-strip">
-          <img src="../inauguracion_fachada_pactum.jpg" alt="Fachada Sala PACTUM Chihuahua" />
-          <img src="../inauguracion_corte_liston_pactum.jpg" alt="Inauguración Oficial Sala PACTUM" />
+          <div class="photo-card">
+            <img src="../inauguracion_fachada_pactum.jpg" alt="Fachada Sala PACTUM Chihuahua" />
+            <span>Sede Col. Industrial</span>
+          </div>
+          <div class="photo-card">
+            <img src="../inauguracion_corte_liston_pactum.jpg" alt="Inauguración Oficial Sala PACTUM" />
+            <span>Respaldo IJA · TSJE</span>
+          </div>
         </div>
-        <div class="feature-box" style="padding: 10px 12px; gap: 6px;">
+        <div class="feature-box" style="padding: 10px 13px 10px 15px; gap: 7px;">
           <div class="feature-item">
-            <span class="feature-icon">1️⃣</span>
-            <div>Redactas tu contrato habitual de renta o compraventa.</div>
+            <span class="kpi-mini-pill cyan">Paso 01</span>
+            <div>Redactas tu contrato comercial habitual de renta o promesa.</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">2️⃣</span>
-            <div>Agendas cita VIP sin filas en <strong>Sala PACTUM</strong> (`C. Miguel Ahumada #153`).</div>
+            <span class="kpi-mini-pill">Paso 02</span>
+            <div>Acuden sin filas a nuestra <strong>Sala Privada VIP</strong> (C. Miguel Ahumada #153).</div>
           </div>
           <div class="feature-item">
-            <span class="feature-icon">3️⃣</span>
-            <div>Firman el Convenio MASC con Facilitadores Certificados en un pago único.</div>
+            <span class="kpi-mini-pill emerald">Paso 03</span>
+            <div>Firman ante Facilitadores Certificados en un pago único eficiente.</div>
           </div>
         </div>
       </article>
@@ -773,7 +1062,7 @@
     <!-- AUDIO WAVEFORM + SYNCHRONIZED SUBTITLES -->
     <div class="audio-deck">
       <div class="live-caption" id="liveCaption">
-        🎧 Presiona Play para escuchar el análisis inmobiliario completo...
+        🎧 Presiona Play para escuchar el dossier sonoro completo...
       </div>
 
       <div class="wave-row">
@@ -789,16 +1078,19 @@
       </div>
     </div>
 
-    <!-- PERMANENT OFFICIAL PACTUM CONTACT FOOTER -->
+    <!-- PERMANENT OFFICIAL PACTUM JEWEL CONTACT FOOTER -->
     <footer class="pactum-footer">
       <div class="pactum-cta-row">
         <div class="pactum-info">
-          <strong>🏛️ SALA PACTUM MEDIACIÓN PRIVADA</strong>
-          <span>📍 C. Miguel Ahumada #153, Col. Industrial, Chih.</span>
+          <strong>🏛️ SALA PACTUM MEDIACIÓN PRIVADA · CHIHUAHUA</strong>
+          <span>📍 C. Miguel Ahumada #153, Col. Industrial, Chihuahua, Chih.</span>
         </div>
-        <a class="wa-cta-btn" href="https://wa.me/526145510188?text=Hola,%20escuch%C3%A9%20la%20presentaci%C3%B3n%20del%20Podcast%20MASC%20y%20quiero%20informaci%C3%B3n%20para%20validar%20un%20contrato%20en%20Sala%20Pactum" target="_blank">
+        <a class="wa-cta-btn" href="https://wa.me/526145510188?text=Hola,%20escuch%C3%A9%20la%20presentaci%C3%B3n%20del%20Podcast%20MASC%20y%20quiero%20informaci%C3%B3n%20para%20validar%20un%20contrato%20en%20Sala%20Pactum" target="_blank" rel="noopener">
           <span>💬</span> (614) 551-0188
         </a>
+      </div>
+      <div class="pactum-endorsement-micro">
+        Centro Privado Autorizado por el IJA · Poder Judicial del Estado de Chihuahua
       </div>
     </footer>
 
@@ -806,42 +1098,57 @@
   </main>
 
   <script>
+    // Aligned to the full 445s (07:24) master podcast & Nexo's 6-capsule master spec
     const SLIDES = [
-      { start: 0,   end: 136, title: '1. IJA · TSJE' },
-      { start: 136, end: 188, title: '2. Cosa Juzgada' },
-      { start: 188, end: 260, title: '3. Desalojo Express' },
-      { start: 260, end: 309, title: '4. Compraventas' },
-      { start: 309, end: 361, title: '5. Comisiones' },
-      { start: 361, end: 445, title: '6. Sala Pactum' }
+      { start: 0,     end: 137.0, bg: 'judicial',  title: '1. IJA · TSJE' },
+      { start: 137.0, end: 189.5, bg: 'penthouse', title: '2. Cosa Juzgada' },
+      { start: 189.5, end: 261.5, bg: 'desk',      title: '3. Desalojo Express' },
+      { start: 261.5, end: 310.6, bg: 'judicial',  title: '4. Compraventas' },
+      { start: 310.6, end: 362.0, bg: 'penthouse', title: '5. Comisiones' },
+      { start: 362.0, end: 445.0, bg: 'desk',      title: '6. Sala Pactum' }
     ];
 
     const CAPTIONS = [
-      [0, 10, "¡Hola! En el mundo inmobiliario en Chihuahua, la seguridad jurídica lo es literalmente todo."],
-      [10, 22, "Hoy desglosamos un salvavidas real: los Mecanismos Alternativos (MASC) en modalidad preventiva."],
-      [22, 38, "Veremos cómo blindar tu patrimonio con certeza absoluta en arrendamientos y compraventas."],
-      [38, 57, "Sección 1: El origen y evolución de la Justicia Alternativa en el Estado de Chihuahua."],
-      [57, 77, "Chihuahua fue pionero nacional desde 2006 y consolidó el Instituto de Justicia Alternativa en 2014."],
-      [77, 94, "No es un acuerdo informal: está supervisado por el IJA, órgano del Tribunal Superior de Justicia."],
-      [94, 114, "Al firmar en Sala Autorizada, tienes todo el peso legal del Poder Judicial respaldándote."],
-      [114, 136, "Los MASC nacieron para sacarnos de juzgados saturados y juicios hostiles de años."],
-      [136, 148, "Sección 2: Grábate este término clave — «COSA JUZGADA»."],
-      [148, 168, "Al firmar un Convenio MASC Preventivo, adquiere fuerza de Sentencia Definitiva desde el Día 1."],
-      [168, 188, "Se firma el mismo día que tu contrato de renta o promesa de compraventa: blindaje desde el minuto cero."],
-      [188, 206, "Sección 3: Un juicio civil ordinario tarda de 12 a 24 meses de desgaste, gastos y vueltas."],
-      [206, 218, "Con MASC Preventivo vas directo por Vía de Apremio: recuperación y desalojo en semanas."],
-      [218, 235, "Además, permite ejecución directa ante juez para cobrar o embargar por rentas caídas."],
-      [235, 249, "Ojo: las pólizas jurídicas tradicionales solo pagan un abogado para pelear 2 años en juicio."],
-      [249, 260, "Con MASC Pactum no peleas un juicio: el juez ejecuta de inmediato lo ya pactado."],
-      [260, 275, "Sección 4: En compraventas, asegura fecha exacta de entrega física del inmueble."],
-      [275, 290, "Penalizaciones 100% ejecutables si alguien se retracta y mediación privada en vicios ocultos."],
-      [290, 309, "Es el escudo perfecto entre la Promesa de Compraventa y la Escritura ante Notario Público."],
-      [309, 326, "Sección 5: Escenario Ganar-Ganar — el dueño protege su inmueble y el cliente recibe trato justo."],
-      [326, 345, "Para los Asesores Inmobiliarios, ofrecer respaldo del IJA · TSJE es un diferenciador premium."],
-      [345, 361, "Garantizas tus comisiones evitando que las operaciones se caigan por miedo del propietario."],
-      [361, 375, "Sección 6: ¿Cómo ejecutarlo? Paso 1: Redactas tu contrato habitual de renta o compraventa."],
-      [375, 387, "Paso 2 y 3: Acuden a Sala Privada Autorizada PACTUM y firman con Facilitadores Certificados."],
-      [387, 413, "Sin las filas de juzgados públicos: atención ejecutiva VIP mediante un pago único eficiente."],
-      [413, 445, "Blinda hoy tu patrimonio y tus comisiones en Sala PACTUM · WhatsApp (614) 551-0188."]
+      [0.0,   10.0, "¡Hola! En el mercado inmobiliario de Chihuahua, la seguridad jurídica lo es literalmente todo."],
+      [10.0,  22.0, "Hoy desglosamos un salvavidas real: los Mecanismos Alternativos (MASC) en modalidad preventiva."],
+      [22.0,  38.5, "Descubre cómo blindar tu patrimonio con certeza absoluta en arrendamientos y compraventas."],
+      [38.5,  57.2, "Cápsula 1: El respaldo real del Poder Judicial del Estado de Chihuahua."],
+      // Cápsula 1 (offset 57.2s)
+      [57.2,  65.3, "Chihuahua es orgullo nacional: fuimos verdaderos pioneros en Justicia Alternativa."],
+      [65.3,  74.6, "Desde 2006 integramos mecanismos alternativos y en 2008 llegó la reforma al Artículo 17 Constitucional."],
+      [74.6,  87.8, "En 2014–2015 se consolidó el Instituto de Justicia Alternativa (IJA) y la Ley Estatal: llevamos la delantera."],
+      [87.8,  94.5, "Ojo: NO hablamos de un simple apretón de manos ni de un acuerdo informal de buena fe."],
+      [94.5,  108.3,"Están oficialmente autorizados y supervisados por el IJA, órgano del Tribunal Superior de Justicia."],
+      [108.3, 116.8,"Al firmar en Sala Autorizada tienes todo el peso legal del Poder Judicial respaldándote."],
+      [116.8, 129.0,"Los MASC nacieron para sacarnos de juzgados crónicamente saturados y juicios larguísimos."],
+      [129.0, 137.5,"Es devolvernos el control mediante una justicia más humana, rapidísima y pacífica."],
+      // Cápsula 2 (offset 138.2s)
+      [137.5, 148.5,"Cápsula 2: Grábate estas dos palabras clave — «COSA JUZGADA»."],
+      [148.5, 158.0,"Un Convenio MASC Preventivo adquiere al firmarlo fuerza de Sentencia Definitiva de Juez Civil."],
+      [158.0, 168.2,"Desde el Día 1 tienes en tus manos una resolución final sin amparos ni apelaciones: ¡caso cerrado!"],
+      [168.2, 178.6,"La clave preventiva: se firma el mismo día que tu contrato de arrendamiento o promesa."],
+      [178.6, 189.5,"No esperas al problema: blindas toda la operación desde el minuto cero."],
+      // Cápsula 3 (offset 190.5s)
+      [189.5, 206.0,"Cápsula 3: Un juicio civil ordinario en Chihuahua quita el sueño de 12 a 24 meses de desgaste."],
+      [206.0, 218.0,"Con MASC Preventivo vas directo por Vía de Apremio: desalojo express en cuestión de semanas."],
+      [218.0, 234.8,"También ejecutas ágilmente por rentas caídas con embargo de cuentas o bienes ante el juez."],
+      [234.8, 249.0,"La verdad incómoda: las pólizas jurídicas tradicionales solo pagan abogado para pelear 2 años."],
+      [249.0, 261.5,"Con Sala PACTUM evitas el juicio completo: el juez ejecuta de inmediato lo acordado."],
+      // Cápsula 4 (offset 262.6s)
+      [261.5, 275.4,"Cápsula 4: En compraventas, el MASC garantiza fecha exacta de entrega física del inmueble."],
+      [275.4, 289.8,"Penalizaciones financieras 100% ejecutables y mediación privada confidencial ante vicios ocultos."],
+      [289.8, 310.6,"No sustituye al Notario Público: es el escudo perfecto entre la Promesa y la Escritura definitiva."],
+      // Cápsula 5 (offset 311.6s)
+      [310.6, 326.0,"Cápsula 5: Escenario Ganar-Ganar — el propietario blinda su inmueble con ejecución rápida."],
+      [326.0, 338.8,"El inquilino o comprador firma con reglas claras, trato humano y mediación imparcial."],
+      [338.8, 350.0,"Para el Asesor Inmobiliario, ofrecer respaldo IJA · TSJE es oro molido y prestigio premium."],
+      [350.0, 362.0,"Garantizas al 100% tus comisiones evitando operaciones caídas por miedo de última hora."],
+      // Cápsula 6 (offset 363.0s)
+      [362.0, 374.8,"Cápsula 6: Ejecútalo en 3 pasos simples — Paso 1: redactas tu contrato comercial habitual."],
+      [374.8, 387.2,"Paso 2 y 3: acuden a Sala Privada PACTUM y firman con Facilitadores Certificados. ¡Listo!"],
+      [387.2, 412.8,"Olvida las filas eternas de juzgados públicos: atención ejecutiva VIP en un pago único eficiente."],
+      [412.8, 432.5,"Transforma hoy la incertidumbre en certeza jurídica con fuerza de Juez en Chihuahua."],
+      [432.5, 445.5,"Agenda tu cierre blindado en Sala PACTUM · WhatsApp Directo (614) 551-0188."]
     ];
 
     const audio = document.getElementById('podcastAudio');
@@ -855,7 +1162,8 @@
     const ctx = canvas.getContext('2d');
 
     let activeSlide = 0;
-    let speeds = [1.0, 1.2, 1.5];
+    let activeBg = 'judicial';
+    const speeds = [1.0, 1.2, 1.5];
     let speedIdx = 0;
     let audioCtx = null;
     let analyser = null;
@@ -884,10 +1192,22 @@
       }
     }
 
+    function updateBackgroundTheme(theme) {
+      if (!theme || theme === activeBg) return;
+      activeBg = theme;
+      document.querySelectorAll('.bg-layer').forEach((layer) => {
+        layer.classList.toggle('active', layer.id === 'bg-' + theme);
+      });
+    }
+
     function renderSlideUI(idx) {
       activeSlide = idx;
       document.querySelectorAll('.slide-card').forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
+        const isCurrent = i === idx;
+        el.classList.toggle('active', isCurrent);
+        if (isCurrent && el.dataset.bg) {
+          updateBackgroundTheme(el.dataset.bg);
+        }
       });
       document.querySelectorAll('.chap-btn').forEach((el, i) => {
         el.classList.toggle('active', i === idx);
@@ -943,17 +1263,16 @@
     canvas.addEventListener('click', (e) => {
       const rect = canvas.getBoundingClientRect();
       const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      const dur = audio.duration || 444;
+      const dur = audio.duration || 445;
       audio.currentTime = ratio * dur;
       updateProgressUI();
     });
 
     function updateProgressUI() {
       const t = audio.currentTime || 0;
-      const dur = audio.duration || 444;
+      const dur = audio.duration || 445;
       timeBadge.textContent = fmt(t) + ' / ' + fmt(dur);
 
-      // Find matching slide
       for (let i = 0; i < SLIDES.length; i++) {
         const s = SLIDES[i];
         const fill = document.getElementById('bar' + i);
@@ -968,8 +1287,7 @@
         }
       }
 
-      // Find matching caption
-      for (let c of CAPTIONS) {
+      for (const c of CAPTIONS) {
         if (t >= c[0] && t < c[1]) {
           if (liveCaption.textContent !== c[2]) {
             liveCaption.textContent = c[2];
@@ -984,18 +1302,23 @@
       btnPlayPause.textContent = '▶';
     });
 
-    // Draw live golden audio waveform + progress scrub
+    // Draw live 24K golden audio waveform + progress scrub
     function drawLoop(ts) {
       requestAnimationFrame(drawLoop);
       const w = canvas.width;
       const h = canvas.height;
       ctx.clearRect(0, 0, w, h);
 
-      const bars = 36;
+      const bars = 38;
       const gap = 3;
       const barW = (w - gap * (bars - 1)) / bars;
-      const dur = audio.duration || 444;
+      const dur = audio.duration || 445;
       const progress = (audio.currentTime || 0) / dur;
+
+      const grad = ctx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#FFF7DB');
+      grad.addColorStop(0.5, '#FDE68A');
+      grad.addColorStop(1, '#D4AF37');
 
       if (analyser && !audio.paused) {
         analyser.getByteFrequencyData(freqData);
@@ -1008,7 +1331,6 @@
             const val = freqData[i % freqData.length] / 255;
             amp = Math.max(0.16, val * 0.95);
           } else {
-            // Smooth organic voice-like wave fallback (works on file:// too!)
             const wave1 = Math.sin(ts * 0.008 + i * 0.55) * 0.35;
             const wave2 = Math.cos(ts * 0.013 - i * 0.3) * 0.28;
             amp = Math.max(0.16, Math.min(0.95, 0.45 + wave1 + wave2));
@@ -1019,7 +1341,7 @@
         const y = (h - bh) / 2;
         const played = (i / bars) <= progress;
 
-        ctx.fillStyle = played ? '#FDE68A' : 'rgba(255, 255, 255, 0.24)';
+        ctx.fillStyle = played ? grad : 'rgba(255, 255, 255, 0.22)';
         ctx.beginPath();
         ctx.roundRect(x, y, barW, bh, 3);
         ctx.fill();
