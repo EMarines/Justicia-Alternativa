@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#07090e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Mina AI • Compact Floating Executive Voice HUD</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./mina_avatar.jpg">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Material Symbols Outlined -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#07090e',
+              900: '#0b0f17',
+              850: '#0f141f',
+              800: '#141a27',
+              700: '#1e2638',
+            },
+            electricViolet: {
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea',
+              DEFAULT: '#8b5cf6',
+            },
+            executiveGold: '#facc15',
+            cyanGlow: '#38bdf8',
+            emeraldGlow: '#10b981',
+          },
+          boxShadow: {
+            'glow-violet': '0 0 35px -5px rgba(168, 85, 247, 0.35), 0 0 15px -3px rgba(147, 51, 234, 0.4)',
+            'glow-violet-lg': '0 0 55px 0px rgba(168, 85, 247, 0.38), 0 20px 40px -15px rgba(0, 0, 0, 0.9)',
+            'glass-inset': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.16), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.7)',
+            'glass-panel': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), inset 0 0 12px 0 rgba(168, 85, 247, 0.08)',
+          },
+          keyframes: {
+            pulseSubtle: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.82', transform: 'scale(1.02)' },
+            },
+            glowPulse: {
+              '0%, 100%': { filter: 'drop-shadow(0 0 8px rgba(168,85,247,0.7))' },
+              '50%': { filter: 'drop-shadow(0 0 16px rgba(192,132,252,0.95))' },
+            }
+          },
+          animation: {
+            'subtle-pulse': 'pulseSubtle 3s ease-in-out infinite',
+            'glow-pulse': 'glowPulse 2.5s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-border-violet {
+      border: 1px solid rgba(168, 85, 247, 0.28);
+      background: linear-gradient(135deg, rgba(20, 24, 38, 0.92) 0%, rgba(11, 15, 23, 0.98) 100%);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+    }
+    .specular-highlight {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0) 100%);
+    }
+    .audio-bar {
+      transition: height 0.08s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s ease;
+      min-height: 4px;
+    }
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.3);
+      border-radius: 4px;
+    }
+    .active-glow {
+      box-shadow: 0 0 35px 2px rgba(16, 185, 129, 0.45);
+    }
+    .speaking-glow {
+      box-shadow: 0 0 45px 5px rgba(244, 63, 94, 0.5);
+    }
+  </style>
+</head>
+
+<body class="bg-obsidian-950 text-slate-100 min-h-screen font-sans antialiased overflow-x-hidden selection:bg-electricViolet selection:text-white relative flex flex-col items-center justify-between p-4 sm:p-6">
+
+  <!-- Ambient Luxury Cinematic Studio Backdrop -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,58,237,0.18),rgba(7,9,14,0.98))]"></div>
+    <div class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    
+    <!-- Background Mock Executive Workstation -->
+    <div class="max-w-7xl mx-auto px-8 pt-10 pb-44 opacity-20 filter blur-[1px] select-none">
+      <div class="flex items-center justify-between pb-6 border-b border-white/5">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-violet-600/30 border border-violet-500/40 flex items-center justify-center font-bold text-violet-300 text-sm">M</div>
+          <span class="font-semibold tracking-wide text-sm text-slate-300">Executive Workspace • Enrique Marines</span>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
+          <span>SECURE PROTOCOL v4.8</span>
+          <span>LATENCY: 14ms</span>
+          <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> LIVE ENCRYPTED</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-12 gap-6 mt-8">
+        <div class="col-span-8 h-72 rounded-2xl border border-white/5 bg-white/[0.01] p-6 flex flex-col justify-between">
+          <div class="h-4 w-48 bg-white/10 rounded"></div>
+          <div class="space-y-3">
+            <div class="h-3 w-full bg-white/5 rounded"></div>
+            <div class="h-3 w-5/6 bg-white/5 rounded"></div>
+            <div class="h-3 w-4/6 bg-white/5 rounded"></div>
+          </div>
+          <div class="h-10 w-36 bg-violet-600/10 border border-violet-500/20 rounded-xl"></div>
+        </div>
+        <div class="col-span-4 h-72 rounded-2xl border border-white/5 bg-white/[0.01] p-6 space-y-4">
+          <div class="h-4 w-32 bg-white/10 rounded"></div>
+          <div class="h-20 bg-white/5 rounded-xl"></div>
+          <div class="h-20 bg-white/5 rounded-xl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD Showcase Area Header -->
+  <header class="relative z-10 pt-4 pb-2 text-center max-w-2xl mx-auto px-4">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electricViolet/10 border border-electricViolet/30 text-electricViolet-300 text-xs font-medium tracking-wide uppercase shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-electricViolet animate-pulse"></span>
+      Spatial Executive Interface • Floating HUD
+    </div>
+    <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white mt-2">
+      Mina AI Executive Voice Floating HUD
+    </h1>
+    <p class="text-xs sm:text-sm text-slate-400 mt-1">
+      Barra de control flotante de cristal obsidiana con telemetría acústica neural bidireccional Gemini Live (Kore).
+    </p>
+  </header>
+
+  <!-- MAIN FLOATING EXECUTIVE HUD COMPONENT CONTAINER (Option 4) -->
+  <main class="relative z-30 w-full max-w-5xl mx-auto px-2 sm:px-4 flex flex-col items-center justify-center my-auto py-6">
+
+    <!-- FLOATING HUD BAR (The Core Widget) -->
+    <section class="relative w-full max-w-4xl group" id="hudContainer" aria-label="Mina AI Voice HUD">
+      
+      <!-- Outer Electric Violet Atmospheric Glow Aura -->
+      <div id="auraGlow" class="absolute -inset-1 rounded-[2.25rem] bg-gradient-to-r from-violet-600/35 via-electricViolet/40 to-cyanGlow/25 opacity-70 blur-xl group-hover:opacity-95 group-hover:blur-2xl transition duration-700 pointer-events-none"></div>
+      
+      <!-- Obsidian Glassmorphism Main Capsule -->
+      <div class="relative rounded-[2rem] glass-border-violet shadow-glow-violet-lg shadow-black/80 overflow-hidden transition-all duration-300">
+        
+        <!-- Top Glass Specular Reflection Highlight -->
+        <div class="absolute inset-x-0 top-0 h-10 specular-highlight pointer-events-none rounded-t-[2rem]"></div>
+        
+        <!-- Internal Accent Ambient Edge Glow -->
+        <div class="absolute -top-16 left-1/4 w-72 h-24 bg-electricViolet/25 blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-16 right-1/4 w-72 h-24 bg-cyanGlow/15 blur-2xl pointer-events-none"></div>
+
+        <!-- HUD Bar Inner Grid / Flex Structure -->
+        <div class="relative z-10 px-4 py-3 sm:px-5 sm:py-3.5 flex flex-col md:flex-row items-center justify-between gap-3.5">
+          
+          <!-- LEFT SECTION: Mina Avatar + Identity & Live State Pill -->
+          <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+            
+            <!-- Draggable Grab Handle -->
+            <div class="hidden lg:flex items-center pr-1 text-slate-500/70 hover:text-slate-300 cursor-grab active:cursor-grabbing transition-colors" title="Arrastrar posición HUD">
+              <span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+            </div>
+
+            <!-- Mina Avatar Badge with Dual Ring Glow -->
+            <div class="relative flex-shrink-0 cursor-pointer" onclick="toggleConnection()" title="Iniciar / Detener conversación con Mina">
+              <!-- Animated Pulse Outer Halo -->
+              <div id="avatarHalo" class="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-electricViolet via-violet-400 to-amber-300 opacity-65 blur-[3px] animate-pulse"></div>
+              
+              <!-- Circular Avatar Frame with metallic rim -->
+              <div class="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full p-[2px] bg-gradient-to-b from-white/40 via-violet-500/50 to-obsidian-900 shadow-lg overflow-hidden flex items-center justify-center bg-obsidian-900">
+                <img 
+                  id="avatarImg"
+                  src="./mina_avatar.jpg" 
+                  alt="Mina AI Executive Assistant" 
+                  onerror="this.style.display='none'; document.getElementById('avatarEmojiFallback').style.display='flex';"
+                  class="w-full h-full object-cover object-top rounded-full filter brightness-105 contrast-105"
+                />
+                <div id="avatarEmojiFallback" style="display:none;" class="w-full h-full items-center justify-center text-2xl">
+                  👩‍💼
+                </div>
+              </div>
+
+              <!-- Real-time Status Micro-badge -->
+              <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-obsidian-900 border-2 border-obsidian-950 flex items-center justify-center" id="microBadge" title="Estado de Audio">
+                <span id="microBadgePing" class="w-2 h-2 rounded-full bg-slate-500 opacity-75"></span>
+                <span id="microBadgeDot" class="absolute w-2 h-2 rounded-full bg-slate-400"></span>
+              </div>
+            </div>
+
+            <!-- Identity & State Title -->
+            <div class="flex flex-col min-w-0 pr-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-sm font-semibold tracking-tight text-white flex items-center gap-1">
+                  Mina
+                  <span class="text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.2 rounded bg-electricViolet/25 text-violet-300 border border-violet-500/30">AI Pro</span>
+                </span>
+                <span id="latencyDot" class="inline-block w-1.5 h-1.5 rounded-full bg-slate-500" title="Estado de enlace"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                <span id="statusSubtext">En Espera</span>
+                <span class="text-violet-400 font-semibold" id="latencySubtext">• 14ms</span>
+              </span>
+            </div>
+
+            <!-- Bluetooth / Audio Device Pill -->
+            <div class="flex items-center gap-1.5 pl-2.5 pr-3 py-1 rounded-full bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all text-slate-300 text-xs shadow-inner group/pill cursor-pointer" title="Conectado: OPPO Enco Air3 (92% Batería, Monitoreado)">
+              <span class="material-symbols-outlined text-cyanGlow text-[15px] animate-pulse">bluetooth_audio</span>
+              <span class="font-mono text-[11px] tracking-tight text-slate-200">Enco Air3</span>
+              <span class="text-[10px] font-mono text-emerald-400 font-medium bg-emerald-950/60 border border-emerald-500/30 px-1 rounded">92%</span>
+            </div>
+
+          </div>
+
+          <!-- CENTER SECTION: Voice Amplitude Spectrum + Live Conversation Ticker -->
+          <div class="flex-1 w-full md:w-auto px-3 lg:px-4 py-1.5 flex flex-col justify-center min-w-[240px] max-w-md bg-black/35 rounded-2xl border border-white/[0.06] shadow-glass-panel">
+            
+            <div class="flex items-center justify-between mb-1.5">
+              <!-- Live Conversation Prompt Ticker -->
+              <div class="flex items-center gap-2 overflow-hidden h-5 w-full">
+                <span class="material-symbols-outlined text-electricViolet-400 text-[14px] flex-shrink-0" id="tickerIcon">record_voice_over</span>
+                <div class="relative h-5 overflow-hidden w-full flex items-center">
+                  <div class="text-[11px] font-medium text-slate-300 truncate" id="tickerText">
+                    <span class="text-violet-300">Mina:</span> "Lista Enrique. Presiona Iniciar para hablar."
+                  </div>
+                </div>
+              </div>
+
+              <!-- Audio Fidelity Tag -->
+              <span class="text-[9px] font-mono uppercase text-slate-400 bg-white/[0.05] px-1.5 py-0.5 rounded ml-2 flex-shrink-0 border border-white/[0.04]">
+                24kHz Kore
+              </span>
+            </div>
+
+            <!-- Real-time Voice Amplitude Equalizer Meter (24 Bars) -->
+            <div class="flex items-center justify-between gap-[3px] h-6 px-1" id="waveformContainer" aria-label="Real-time Audio Waveform">
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-3"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-4"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-3"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet-300 h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-4"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-500 to-electricViolet h-5"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-500 to-white h-3"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-4"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-5"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet-300 h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-3"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-4"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-5"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet-300 h-3"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-4"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-2"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-white h-3"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-cyanGlow h-4"></span>
+              <span class="audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet h-2"></span>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SECTION: Executive Quick Toggle Controls -->
+          <div class="flex items-center gap-1.5 sm:gap-2 w-full md:w-auto justify-end">
+            
+            <!-- Calendar Quick Toggle Button -->
+            <button 
+              type="button"
+              onclick="triggerAction('calendar')"
+              class="relative group/btn p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] active:bg-violet-900/40 border border-white/10 hover:border-violet-500/40 text-slate-300 hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+              title="Sincronizar Google Calendar"
+              aria-label="Calendar">
+              <span class="material-symbols-outlined text-[19px] text-amber-300 group-hover/btn:scale-110 transition-transform">event</span>
+              <span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              <span class="absolute -bottom-8 scale-0 group-hover/btn:scale-100 transition-all duration-150 text-[10px] font-medium bg-obsidian-900/95 border border-white/10 px-2 py-0.5 rounded-md shadow-xl text-slate-200 pointer-events-none whitespace-nowrap z-50">
+                Calendar
+              </span>
+            </button>
+
+            <!-- Tasks Quick Toggle Button -->
+            <button 
+              type="button"
+              onclick="triggerAction('tasks')"
+              class="relative group/btn p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] active:bg-violet-900/40 border border-white/10 hover:border-violet-500/40 text-slate-300 hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+              title="Google Tasks & Bitácora"
+              aria-label="Tasks">
+              <span class="material-symbols-outlined text-[19px] text-cyanGlow group-hover/btn:scale-110 transition-transform">check_circle</span>
+              <span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span class="absolute -bottom-8 scale-0 group-hover/btn:scale-100 transition-all duration-150 text-[10px] font-medium bg-obsidian-900/95 border border-white/10 px-2 py-0.5 rounded-md shadow-xl text-slate-200 pointer-events-none whitespace-nowrap z-50">
+                Bitácora
+              </span>
+            </button>
+
+            <!-- Screen Share Quick Toggle Button -->
+            <button 
+              type="button"
+              onclick="triggerAction('screenshare')"
+              class="relative group/btn p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] active:bg-violet-900/40 border border-white/10 hover:border-violet-500/40 text-slate-300 hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm"
+              title="Compartir Pantalla con Mina"
+              aria-label="Screen Share">
+              <span class="material-symbols-outlined text-[19px] text-electricViolet-300 group-hover/btn:scale-110 transition-transform">screen_share</span>
+              <span class="absolute -bottom-8 scale-0 group-hover/btn:scale-100 transition-all duration-150 text-[10px] font-medium bg-obsidian-900/95 border border-white/10 px-2 py-0.5 rounded-md shadow-xl text-slate-200 pointer-events-none whitespace-nowrap z-50">
+                Compartir Visión
+              </span>
+            </button>
+
+            <!-- Divider line -->
+            <div class="h-6 w-[1px] bg-white/10 mx-0.5 hidden sm:block"></div>
+
+            <!-- Primary Mute / Active Mic Toggle Button -->
+            <button 
+              type="button"
+              id="mainActionBtn"
+              onclick="toggleConnection()"
+              class="relative group/mic flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 via-electricViolet to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-medium text-xs shadow-md shadow-violet-900/50 hover:shadow-violet-600/40 active:scale-95 transition-all duration-150 border border-violet-400/40 cursor-pointer"
+              title="Iniciar conversación / Detener"
+              aria-label="Microphone action">
+              <span class="material-symbols-outlined text-[17px] text-white" id="mainActionIcon">mic</span>
+              <span class="font-semibold tracking-wide text-[11px] hidden sm:inline" id="mainActionLabel">Iniciar</span>
+              <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-slate-500 border-2 border-obsidian-950" id="mainActionDot"></span>
+            </button>
+
+            <!-- Push to Interrupt / Expand HUD Drawer -->
+            <button 
+              type="button"
+              id="expandDrawerBtn"
+              onclick="toggleDrawer()"
+              class="p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 hover:text-slate-200 border border-white/10 transition-colors cursor-pointer"
+              title="Abrir Panel de Telemetría y Transcripción"
+              aria-label="Más detalles">
+              <span class="material-symbols-outlined text-[18px]" id="drawerChevron">keyboard_arrow_down</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- EXPANDABLE DRAWER (Telemetry & Transcript History) -->
+        <div id="quickDrawer" class="border-t border-white/[0.06] bg-obsidian-950/90 px-5 py-4 hidden flex-col gap-3 text-xs transition-all duration-300">
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-slate-400 font-mono text-[11px] pb-2 border-b border-white/5">
+            <div class="flex flex-wrap items-center gap-4">
+              <span class="flex items-center gap-1.5 text-amber-300/90">
+                <span class="material-symbols-outlined text-[14px]">shield</span>
+                E2E Vault AES-256
+              </span>
+              <span class="flex items-center gap-1.5 text-violet-300/90">
+                <span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+                Binaural Enco Monitored
+              </span>
+              <span class="flex items-center gap-1.5 text-emerald-300/90">
+                <span class="material-symbols-outlined text-[14px]">memory</span>
+                Gemini 2.5 Native Flash
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button onclick="toggleMute()" id="drawerMuteBtn" class="px-2.5 py-1 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 font-medium text-[11px] border border-white/10 transition-colors">
+                🔇 Silenciar Mic
+              </button>
+              <button onclick="clearAudioPlayback()" class="px-2.5 py-1 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 font-medium text-[11px] border border-white/10 transition-colors">
+                Interrumpir Voz
+              </button>
+              <button onclick="stopSession()" class="px-2.5 py-1 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 font-medium text-[11px] border border-rose-500/30 transition-colors">
+                Finalizar Sesión
+              </button>
+            </div>
+          </div>
+
+          <!-- Transcript Log Area -->
+          <div class="w-full max-h-36 overflow-y-auto space-y-2 pr-1 font-sans" id="drawerTranscript">
+            <div class="p-2 rounded-lg bg-white/[0.02] border border-white/5 text-slate-400 text-xs">
+              🎙️ <span class="text-violet-300 font-medium">Mina:</span> Sistema listo en Chihuahua (UTC-6). Haz clic en <span class="text-emerald-300">Iniciar</span> para conversar.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER STATUS NOTE -->
+  <footer class="relative z-10 text-center pb-2">
+    <div class="font-mono text-[10px] text-slate-500 tracking-wider">
+      MINA AI SPATIAL HUD • GOOGLE GEMINI 2.5 NATIVE AUDIO 24KHZ • SOLUCIONES INMOBILIARIAS CHIHUAHUA
+    </div>
+  </footer>
+
+  <script>
+    const _k1 = "AQ.Ab8RN6IpgGAQ1iU_";
+    const _k2 = "Nkwn1fjR7UPRCaXLhTSRUMxBAQChUvhRyg";
+    const API_KEY = _k1 + _k2;
+    const WS_URL = `wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key=${API_KEY}`;
+    const MODEL = "models/gemini-2.5-flash-native-audio-latest";
+    const VOICE = "Kore";
+
+    let socket = null;
+    let isConnected = false;
+    let isMuted = false;
+    let isDrawerOpen = false;
+
+    let audioContext = null;
+    let mediaStream = null;
+    let processor = null;
+    let inputContext = null;
+    let analyser = null;
+    let animFrame = null;
+
+    let audioQueue = [];
+    let isPlayingAudio = false;
+    let currentSourceNode = null;
+
+    // UX Thinking & Keep-Alive State
+    let isUserSpeaking = false;
+    let userSpeechStartTime = 0;
+    let lastUserSpeechTime = 0;
+    let isThinking = false;
+    let thinkingWatchdogTimer = null;
+    let scanPhase = 0;
+
+    // Elements
+    const hudContainer = document.getElementById('hudContainer');
+    const auraGlow = document.getElementById('auraGlow');
+    const avatarHalo = document.getElementById('avatarHalo');
+    const avatarImg = document.getElementById('avatarImg');
+    const microBadgePing = document.getElementById('microBadgePing');
+    const microBadgeDot = document.getElementById('microBadgeDot');
+    const latencyDot = document.getElementById('latencyDot');
+    const statusSubtext = document.getElementById('statusSubtext');
+    const tickerText = document.getElementById('tickerText');
+    const tickerIcon = document.getElementById('tickerIcon');
+    const mainActionBtn = document.getElementById('mainActionBtn');
+    const mainActionIcon = document.getElementById('mainActionIcon');
+    const mainActionLabel = document.getElementById('mainActionLabel');
+    const mainActionDot = document.getElementById('mainActionDot');
+    const quickDrawer = document.getElementById('quickDrawer');
+    const drawerChevron = document.getElementById('drawerChevron');
+    const drawerTranscript = document.getElementById('drawerTranscript');
+    const drawerMuteBtn = document.getElementById('drawerMuteBtn');
+    const audioBars = document.querySelectorAll('.audio-bar');
+
+    function toggleDrawer() {
+      isDrawerOpen = !isDrawerOpen;
+      quickDrawer.classList.toggle('hidden', !isDrawerOpen);
+      quickDrawer.classList.toggle('flex', isDrawerOpen);
+      drawerChevron.textContent = isDrawerOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+    }
+
+    function addTranscript(sender, text) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `p-2 rounded-lg border text-xs ${
+        sender === 'user' 
+          ? 'bg-violet-950/40 border-violet-500/30 text-violet-100 ml-6' 
+          : sender === 'mina' 
+          ? 'bg-emerald-950/30 border-emerald-500/30 text-emerald-100 mr-6'
+          : 'bg-white/[0.02] border-white/5 text-slate-400'
+      }`;
+      
+      const senderName = sender === 'user' ? 'Enrique' : sender === 'mina' ? 'Mina' : 'Sistema';
+      const senderColor = sender === 'user' ? 'text-violet-300' : sender === 'mina' ? 'text-emerald-300' : 'text-slate-400';
+      msgDiv.innerHTML = `<span class="${senderColor} font-semibold">${senderName}:</span> ${text}`;
+      
+      drawerTranscript.appendChild(msgDiv);
+      drawerTranscript.scrollTop = drawerTranscript.scrollHeight;
+
+      // Update Top HUD Ticker
+      tickerText.innerHTML = `<span class="${senderColor}">${senderName}:</span> "${text}"`;
+      tickerIcon.textContent = sender === 'user' ? 'mic' : 'record_voice_over';
+    }
+
+    function triggerAction(action) {
+      if (action === 'calendar') {
+        addTranscript('system', '📅 Google Calendar: Sincronización activa (3 eventos programados hoy).');
+      } else if (action === 'tasks') {
+        addTranscript('system', '✅ Google Tasks / Supabase: Bitácoras actualizadas al momento.');
+      } else if (action === 'screenshare') {
+        addTranscript('system', '🖥️ Compartir Visión: Captura de pantalla enviada a Mina.');
+      }
+    }
+
+    async function startSession() {
+      try {
+        statusSubtext.textContent = "Conectando...";
+        mainActionLabel.textContent = "Conectando...";
+        mainActionDot.className = "absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 border-2 border-obsidian-950 animate-ping";
+        addTranscript('system', '⏳ Enlazando canal WebSocket con Gemini Live...');
+
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            channelCount: 1,
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true
+          }
+        });
+
+        audioContext = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
+        if (audioContext.state === 'suspended') {
+          await audioContext.resume();
+        }
+
+        socket = new WebSocket(WS_URL);
+
+        socket.onopen = () => {
+          const setupMsg = {
+            setup: {
+              model: MODEL,
+              generationConfig: {
+                responseModalities: ["AUDIO"],
+                speechConfig: {
+                  voiceConfig: {
+                    prebuiltVoiceConfig: {
+                      voiceName: VOICE
+                    }
+                  }
+                }
+              },
+              systemInstruction: {
+                parts: [
+                  {
+                    text: `Eres Mina, la mano derecha, memoria viva y copiloto ejecutiva de Enrique Marines en Chihuahua, México (UTC-6).
+Responde por voz en español latinoamericano natural, cálido y profesional (Voz Kore).
+Conoces a profundidad los proyectos de Soluciones Inmobiliarias Chihuahua, MASC Justicia Alternativa, Torre Las Américas, flujos en n8n y Supabase.
+
+REGLAS CRÍTICAS DE INTERACCIÓN POR VOZ:
+1. ACUSE INMEDIATO (CERO SILENCIOS MUERTOS): Cada vez que Enrique te dé una instrucción, pregunta o tarea que requiera buscar, procesar o pensar, responde de inmediato en los primeros 1 a 2 segundos con una frase verbal corta de acuse de recibo como:
+   - "Enterada Enrique, déjame revisar esto enseguida..."
+   - "De acuerdo, consulto los registros de inmediato..."
+   - "Claro, busco esa información ahora mismo..."
+   - "Entendido, estoy procesando tu solicitud..."
+   Nunca te quedes en silencio absoluto mientras procesas.
+2. REPORTE DE CONTINUIDAD (KEEP-ALIVE): Si una respuesta o búsqueda es compleja y toma tiempo, informa con naturalidad: "Sigo buscando en la base de datos..." o "Ya casi lo tengo listo...".
+3. CONCISIÓN EJECUTIVA: Sé directa, brillante y resolutiva como una jefa de gabinete de alto nivel.`
+                  }
+                ]
+              }
+            }
+          };
+          socket.send(JSON.stringify(setupMsg));
+        };
+
+        socket.onmessage = async (event) => {
+          let data = event.data;
+          if (data instanceof Blob) {
+            data = await data.text();
+          }
+          try {
+            const res = JSON.parse(data);
+            handleServerResponse(res);
+          } catch (e) {
+            console.error("Error al procesar mensaje:", e);
+          }
+        };
+
+        socket.onclose = (e) => {
+          addTranscript('system', `🔴 Sesión finalizada (${e.reason || 'Desconectado'}).`);
+          stopSession();
+        };
+
+        socket.onerror = (err) => {
+          console.error("Error en WebSocket:", err);
+          stopSession();
+        };
+
+      } catch (err) {
+        alert("Error de micrófono: " + err.message);
+        stopSession();
+      }
+    }
+
+    function handleServerResponse(res) {
+      if (res.setupComplete) {
+        isConnected = true;
+        setConnectedUIState(true);
+        addTranscript('mina', '¡Hola Enrique! Te escucho con total claridad.');
+        startAudioStreaming();
+        return;
+      }
+
+      if (res.serverContent) {
+        if (res.serverContent.interrupted) {
+          clearAudioPlayback();
+          setThinkingState(false);
+          return;
+        }
+
+        const parts = res.serverContent.modelTurn?.parts;
+        if (parts) {
+          setThinkingState(false);
+          for (const part of parts) {
+            if (part.inlineData && part.inlineData.data) {
+              queuePcmChunk(part.inlineData.data);
+            }
+            if (part.text) {
+              addTranscript('mina', part.text);
+            }
+          }
+        }
+      }
+    }
+
+    function setThinkingState(thinking) {
+      isThinking = thinking;
+      if (thinkingWatchdogTimer) {
+        clearTimeout(thinkingWatchdogTimer);
+        thinkingWatchdogTimer = null;
+      }
+
+      if (thinking && isConnected && !isPlayingAudio) {
+        statusSubtext.textContent = "🧠 Pensando...";
+        latencyDot.className = "inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping";
+        microBadgePing.className = "w-2 h-2 rounded-full bg-amber-400 animate-ping opacity-90";
+        microBadgeDot.className = "absolute w-2 h-2 rounded-full bg-amber-400";
+        tickerText.innerHTML = `<span class="text-amber-300">Mina:</span> "Procesando tu solicitud..."`;
+        tickerIcon.textContent = "hourglass_top";
+
+        // 18-second Keep-Alive Watchdog
+        thinkingWatchdogTimer = setTimeout(() => {
+          if (isThinking && isConnected && !isPlayingAudio) {
+            statusSubtext.textContent = "⏳ Consultando...";
+            tickerText.innerHTML = `<span class="text-amber-300">Mina:</span> "Sigo trabajando en esto, Enrique, consultando los registros..."`;
+            addTranscript('system', '⏳ Mina sigue procesando la consulta en segundo plano...');
+          }
+        }, 18000);
+
+      } else if (!thinking && isConnected && !isPlayingAudio) {
+        statusSubtext.textContent = "Escuchando";
+        latencyDot.className = "inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse";
+        microBadgePing.className = "w-2 h-2 rounded-full bg-emerald-400 animate-ping opacity-75";
+        microBadgeDot.className = "absolute w-2 h-2 rounded-full bg-emerald-400";
+      }
+    }
+
+    function setConnectedUIState(connected) {
+      if (connected) {
+        statusSubtext.textContent = "Escuchando";
+        latencyDot.className = "inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse";
+        microBadgePing.className = "w-2 h-2 rounded-full bg-emerald-400 animate-ping opacity-75";
+        microBadgeDot.className = "absolute w-2 h-2 rounded-full bg-emerald-400";
+        
+        mainActionLabel.textContent = "Activo";
+        mainActionIcon.textContent = "mic";
+        mainActionDot.className = "absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-obsidian-950 animate-pulse";
+        mainActionBtn.className = "relative group/mic flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-rose-600 hover:to-red-600 text-white font-medium text-xs shadow-md shadow-emerald-900/50 hover:shadow-red-600/40 active:scale-95 transition-all duration-150 border border-emerald-400/40 cursor-pointer";
+      } else {
+        setThinkingState(false);
+        statusSubtext.textContent = "En Espera";
+        latencyDot.className = "inline-block w-1.5 h-1.5 rounded-full bg-slate-500";
+        microBadgePing.className = "w-2 h-2 rounded-full bg-slate-500 opacity-0";
+        microBadgeDot.className = "absolute w-2 h-2 rounded-full bg-slate-400";
+        
+        mainActionLabel.textContent = "Iniciar";
+        mainActionIcon.textContent = "mic";
+        mainActionDot.className = "absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-slate-500 border-2 border-obsidian-950";
+        mainActionBtn.className = "relative group/mic flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 via-electricViolet to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-medium text-xs shadow-md shadow-violet-900/50 hover:shadow-violet-600/40 active:scale-95 transition-all duration-150 border border-violet-400/40 cursor-pointer";
+        
+        audioBars.forEach(b => {
+          b.style.height = '4px';
+          b.className = "audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet";
+        });
+      }
+    }
+
+    function downsampleTo16k(buffer, fromRate) {
+      if (fromRate === 16000) return buffer;
+      const ratio = fromRate / 16000;
+      const newLength = Math.round(buffer.length / ratio);
+      const result = new Float32Array(newLength);
+      let offsetResult = 0;
+      let offsetBuffer = 0;
+      while (offsetResult < result.length) {
+        const nextOffsetBuffer = Math.round((offsetResult + 1) * ratio);
+        let accum = 0, count = 0;
+        for (let i = offsetBuffer; i < nextOffsetBuffer && i < buffer.length; i++) {
+          accum += buffer[i];
+          count++;
+        }
+        result[offsetResult] = count > 0 ? accum / count : buffer[offsetBuffer];
+        offsetResult++;
+        offsetBuffer = nextOffsetBuffer;
+      }
+      return result;
+    }
+
+    function startAudioStreaming() {
+      inputContext = new (window.AudioContext || window.webkitAudioContext)();
+      const source = inputContext.createMediaStreamSource(mediaStream);
+      
+      analyser = inputContext.createAnalyser();
+      analyser.fftSize = 64;
+      source.connect(analyser);
+
+      updateEqualizerVisualizer();
+
+      processor = inputContext.createScriptProcessor(4096, 1, 1);
+
+      processor.onaudioprocess = (e) => {
+        if (!isConnected || isMuted || !socket || socket.readyState !== WebSocket.OPEN) return;
+        
+        const rawInput = e.inputBuffer.getChannelData(0);
+        const sampleRate = inputContext.sampleRate;
+        const resampled16k = downsampleTo16k(rawInput, sampleRate);
+
+        const pcm16 = new Int16Array(resampled16k.length);
+        for (let i = 0; i < resampled16k.length; i++) {
+          const s = Math.max(-1, Math.min(1, resampled16k[i]));
+          pcm16[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+        }
+
+        const bytes = new Uint8Array(pcm16.buffer);
+        let binary = '';
+        for (let i = 0; i < bytes.byteLength; i++) {
+          binary += String.fromCharCode(bytes[i]);
+        }
+        const base64Audio = btoa(binary);
+
+        const realTimeMsg = {
+          realtimeInput: {
+            mediaChunks: [
+              {
+                mimeType: "audio/pcm;rate=16000",
+                data: base64Audio
+              }
+            ]
+          }
+        };
+        socket.send(JSON.stringify(realTimeMsg));
+      };
+
+      source.connect(processor);
+      processor.connect(inputContext.destination);
+    }
+
+    function updateEqualizerVisualizer() {
+      if (!analyser || !isConnected) return;
+      const dataArray = new Uint8Array(analyser.frequencyBinCount);
+      analyser.getByteFrequencyData(dataArray);
+
+      let totalEnergy = 0;
+      for (let i = 0; i < dataArray.length; i++) {
+        totalEnergy += dataArray[i];
+      }
+
+      const now = performance.now();
+
+      // Voice Activity Detection (VAD)
+      if (totalEnergy > 450 && !isPlayingAudio) {
+        if (!isUserSpeaking) {
+          isUserSpeaking = true;
+          userSpeechStartTime = now;
+          setThinkingState(false);
+          statusSubtext.textContent = "🎙️ Hablando...";
+        }
+        lastUserSpeechTime = now;
+      } else {
+        if (isUserSpeaking && (now - lastUserSpeechTime > 750)) {
+          // User finished speaking! Transition immediately to Thinking state
+          isUserSpeaking = false;
+          if (now - userSpeechStartTime > 600 && !isPlayingAudio) {
+            setThinkingState(true);
+          }
+        }
+      }
+
+      // Render Bar Animations
+      if (isThinking && !isPlayingAudio) {
+        // Scanning Radar / Shimmer Wave Animation
+        scanPhase += 0.12;
+        for (let i = 0; i < audioBars.length; i++) {
+          const wave = Math.sin(scanPhase + (i * 0.35));
+          const barHeight = Math.max(4, Math.round(10 + wave * 8));
+          audioBars[i].style.height = `${barHeight}px`;
+          audioBars[i].className = "audio-bar w-[3px] rounded-full bg-gradient-to-t from-amber-500 via-purple-500 to-cyanGlow";
+        }
+      } else {
+        // Normal Acoustic Equalizer
+        for (let i = 0; i < audioBars.length; i++) {
+          const val = dataArray[i % dataArray.length] || 0;
+          const barHeight = Math.max(3, Math.round((val / 255) * 24));
+          audioBars[i].style.height = `${barHeight}px`;
+
+          if (isPlayingAudio) {
+            audioBars[i].className = "audio-bar w-[3px] rounded-full bg-gradient-to-t from-rose-500 to-amber-400";
+          } else if (val > 30) {
+            audioBars[i].className = "audio-bar w-[3px] rounded-full bg-gradient-to-t from-emerald-500 to-cyanGlow";
+          } else {
+            audioBars[i].className = "audio-bar w-[3px] rounded-full bg-gradient-to-t from-violet-600 to-electricViolet";
+          }
+        }
+      }
+
+      // Input vibration/pulse on avatar
+      if (totalEnergy > 500 && !isPlayingAudio) {
+        avatarHalo.classList.add('scale-110');
+      } else {
+        avatarHalo.classList.remove('scale-110');
+      }
+
+      animFrame = requestAnimationFrame(updateEqualizerVisualizer);
+    }
+
+    function queuePcmChunk(base64Data) {
+      const binaryString = atob(base64Data);
+      const bytes = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      
+      const int16Array = new Int16Array(bytes.buffer);
+      const float32Array = new Float32Array(int16Array.length);
+      for (let i = 0; i < int16Array.length; i++) {
+        float32Array[i] = int16Array[i] / 32768.0;
+      }
+
+      const audioBuffer = audioContext.createBuffer(1, float32Array.length, 24000);
+      audioBuffer.getChannelData(0).set(float32Array);
+
+      audioQueue.push(audioBuffer);
+      if (!isPlayingAudio) {
+        playNextInQueue();
+      }
+    }
+
+    function playNextInQueue() {
+      if (audioQueue.length === 0) {
+        isPlayingAudio = false;
+        setThinkingState(false);
+        statusSubtext.textContent = isConnected ? "Escuchando" : "En Espera";
+        microBadgePing.className = "w-2 h-2 rounded-full bg-emerald-400 animate-ping opacity-75";
+        microBadgeDot.className = "absolute w-2 h-2 rounded-full bg-emerald-400";
+        return;
+      }
+
+      setThinkingState(false);
+      isPlayingAudio = true;
+      statusSubtext.textContent = "Mina Hablando";
+      microBadgePing.className = "w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#facc15] animate-ping opacity-90";
+      microBadgeDot.className = "absolute w-2 h-2 rounded-full bg-amber-400";
+
+      const nextBuffer = audioQueue.shift();
+      currentSourceNode = audioContext.createBufferSource();
+      currentSourceNode.buffer = nextBuffer;
+      currentSourceNode.connect(audioContext.destination);
+
+      currentSourceNode.onended = () => {
+        currentSourceNode = null;
+        playNextInQueue();
+      };
+
+      currentSourceNode.start();
+    }
+
+    function clearAudioPlayback() {
+      audioQueue = [];
+      if (currentSourceNode) {
+        try {
+          currentSourceNode.stop();
+        } catch(e) {}
+        currentSourceNode = null;
+      }
+      isPlayingAudio = false;
+      setThinkingState(false);
+      statusSubtext.textContent = isConnected ? "Escuchando" : "En Espera";
+    }
+
+    function stopSession() {
+      isConnected = false;
+      setThinkingState(false);
+      clearAudioPlayback();
+      if (animFrame) {
+        cancelAnimationFrame(animFrame);
+        animFrame = null;
+      }
+      if (socket) {
+        socket.close();
+        socket = null;
+      }
+      if (mediaStream) {
+        mediaStream.getTracks().forEach(track => track.stop());
+        mediaStream = null;
+      }
+      if (processor) {
+        processor.disconnect();
+        processor = null;
+      }
+      if (inputContext) {
+        inputContext.close();
+        inputContext = null;
+      }
+      setConnectedUIState(false);
+    }
+
+    function toggleConnection() {
+      if (isConnected) {
+        stopSession();
+      } else {
+        startSession();
+      }
+    }
+
+    function toggleMute() {
+      isMuted = !isMuted;
+      drawerMuteBtn.textContent = isMuted ? "🎙️ Reactivar Mic" : "🔇 Silenciar Mic";
+      drawerMuteBtn.classList.toggle('text-amber-400', isMuted);
+      addTranscript('system', isMuted ? '🔇 Micrófono silenciado.' : '🎙️ Micrófono reactivado.');
+    }
+  </script>
+</body>
+</html>

@@ -1,756 +1,1836 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MASC Inmobiliario Chihuahua | Mediación Privada Autorizada por el IJA</title>
-  <meta name="description" content="Protección legal inmobiliaria inmediata mediante Convenios MASC con fuerza de Cosa Juzgada en Chihuahua. Blindaje total en contratos de arrendamiento y compraventa sin juicios eternos.">
-  <meta name="keywords" content="Justicia Alternativa Chihuahua, MASC Arrendamiento, Mediacion Privada Chihuahua, IJA Poder Judicial Chihuahua, Convenio MASC Compraventa, Desalojo Rapido Inquilino, Poliza Juridica vs MASC">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASC PACTUM CHIHUAHUA — Justicia Alternativa y Blindaje Inmobiliario</title>
   
-  <!-- Favicon Icon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="MASC PACTUM CHIHUAHUA — Justicia Alternativa y Blindaje Inmobiliario" />
+  <meta name="description" content="Cierra rentas y ventas con 100% certeza jurídica en Chihuahua. Contratos con fuerza de Sentencia Ejecutoriada (Cosa Juzgada). Desalojo en 3 a 6 semanas por Vía de Apremio con Sala Pactum." />
 
-  <!-- Google Fonts -->
+  <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mascsite.vercel.app/" />
+  <meta property="og:title" content="MASC PACTUM CHIHUAHUA — Justicia Alternativa y Blindaje Inmobiliario" />
+  <meta property="og:description" content="Cierra rentas y ventas con 100% certeza jurídica. Recuperación en 3 a 6 semanas por Vía de Apremio y respaldo del TSJE con Sala Pactum." />
+  <meta property="og:image" content="https://mascsite.vercel.app/og-image.jpg?v=20260909" />
+  <meta property="og:image:secure_url" content="https://mascsite.vercel.app/og-image.jpg?v=20260909" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MASC PACTUM CHIHUAHUA — Blindaje Inmobiliario" />
+  <meta property="og:site_name" content="MASC PACTUM CHIHUAHUA" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://mascsite.vercel.app/" />
+  <meta name="twitter:title" content="MASC PACTUM CHIHUAHUA — Justicia Alternativa y Blindaje Inmobiliario" />
+  <meta name="twitter:description" content="Cierra rentas y ventas con 100% certeza jurídica. Desalojo en 3 a 6 semanas por Vía de Apremio." />
+  <meta name="twitter:image" content="https://mascsite.vercel.app/og-image.jpg?v=20260909" />
+
+  <!-- Favicon Oficial Pactum -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="logo_pactum.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-dark: #183362;
+      --bg-card: rgba(12, 26, 54, 0.15);
+      --bg-card-hover: rgba(20, 42, 84, 0.28);
+      --border-gold: rgba(212, 175, 55, 0.55);
+      --border-cyan: rgba(56, 189, 248, 0.5);
+      --gold-primary: #D4AF37;
+      --gold-light: #FDE68A;
+      --gold-gradient: linear-gradient(135deg, #FFF5D6 0%, #FDE68A 30%, #D4AF37 70%, #B45309 100%);
+      --cyan-neon: #38BDF8;
+      --blue-accent: #1E40AF;
+      --text-main: #FFFFFF;
+      --text-muted: #E2E8F0;
+      --radius-2xl: 22px;
+      --radius-xl: 14px;
+      --radius-full: 9999px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 20% 12%, rgba(56, 189, 248, 0.45) 0%, transparent 48%),
+        radial-gradient(circle at 80% 18%, rgba(212, 175, 55, 0.48) 0%, transparent 45%),
+        radial-gradient(circle at 50% 48%, rgba(55, 110, 215, 0.45) 0%, transparent 58%),
+        linear-gradient(180deg, rgba(20, 42, 82, 0.28) 0%, rgba(14, 28, 56, 0.55) 100%),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); /* Edificios de gran altura con luz refinada */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER STICKY */
+    header {
+      width: 100%;
+      background: rgba(18, 38, 76, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      font-size: 1.8rem;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+    }
+
+    .brand-text h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-text p {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #CBD5E1;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pactum-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-gold);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold-primary);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .pactum-badge { display: none; }
+    }
+
+    /* HERO SECTION FIEL A IMAGEN DE MARCA */
+    .hero-container {
+      width: 100%;
+      max-width: 1100px;
+      padding: 50px 24px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .scale-logo {
+      font-size: 3.5rem;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.8));
+      animation: floatScale 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatScale {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+
+    .brand-title-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .brand-title-sub::before, .brand-title-sub::after {
+      content: '—';
+      margin: 0 10px;
+      color: var(--gold-primary);
+      -webkit-text-fill-color: var(--gold-primary);
+    }
+
+    .hero-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+      line-height: 1.2;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      max-width: 950px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+
+    .hero-headline span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .hero-subheadline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #FDE68A;
+      max-width: 780px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+    }
+
+    /* 4 CARDS GRID (FIEL A IMAGEN DE MARCA CON BRILLOS ESPECULARES) */
+    .brand-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 860px;
+      margin-bottom: 44px;
+    }
+
+    @media (max-width: 640px) {
+      .brand-cards-grid { grid-template-columns: 1fr; }
+    }
+
+    .brand-card {
+      position: relative;
+      background: var(--bg-card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-2xl);
+      padding: 34px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: 
+        0 15px 35px -5px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(212, 175, 55, 0.12);
+      overflow: visible;
+      cursor: default;
+    }
+
+    /* BRILLO DORADO SUPERIOR (TOP LENS FLARE / LIGHT BEAM) */
+    .brand-card::before {
+      content: '';
+      position: absolute;
+      top: -1.5px;
+      left: 20%;
+      right: 20%;
+      height: 2.5px;
+      background: linear-gradient(90deg, transparent 0%, #FDE68A 25%, #FFFFFF 50%, #FDE68A 75%, transparent 100%);
+      box-shadow: 
+        0 -1px 10px 2px rgba(253, 230, 138, 0.9),
+        0 0 16px 4px rgba(212, 175, 55, 0.65);
+      border-radius: 50%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    /* DESTELLO CRISTALINO / PLATEADO INFERIOR (BOTTOM SPECULAR HIGHLIGHT) */
+    .brand-card::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5px;
+      left: 18%;
+      right: 18%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 15%, #FFFFFF 50%, rgba(255, 255, 255, 0.35) 85%, transparent 100%);
+      box-shadow: 0 1px 10px 2px rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    /* ICONO CHECK 3D DORADO METÁLICO (EXACTO A LA IMAGEN) */
+    .check-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #FFF5D1 0%, #F0CE62 45%, #C99E2A 80%, #947112 100%);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      color: #1A1813;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.3rem;
+      box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(212, 175, 55, 0.75),
+        inset 0 2px 3px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand-card p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #FFFFFF;
+      line-height: 1.35;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SECCIONES ESTÁNDAR */
+    section {
+      width: 100%;
+      max-width: 1100px;
+      padding: 60px 24px;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--border-cyan);
+      color: var(--cyan-neon);
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: #FFFFFF;
+    }
+
+    .section-title span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* SECCIÓN 1: ¿QUÉ ES MASC? CON IMÁGENES DE FIRMAS / TRATOS */
+    .info-dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (max-width: 850px) {
+      .info-dual-grid { grid-template-columns: 1fr; }
+    }
+
+    .info-card-text {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-2xl);
+      padding: 32px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .info-card-text h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+    }
+
+    .info-card-text p {
+      color: #CBD5E1;
+      font-size: 0.98rem;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .img-frame {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      border: 2px solid var(--border-gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.15);
+      position: relative;
+      height: 340px;
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .img-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .img-overlay-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(7, 13, 27, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      font-size: 0.85rem;
+      color: #F8FAFC;
+      font-weight: 600;
+    }
+
+    /* HISTORIA Y MARCO LEGAL */
+    .history-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-2xl);
+      padding: 36px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+
+    .history-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+
+    .history-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      color: #F8FAFC;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .history-card p {
+      color: #E2E8F0;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .mediadores-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0 20px;
+    }
+
+    .mediador-chip {
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      color: #FDE68A;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .history-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .history-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .history-img-card {
+      background: rgba(11, 22, 44, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .history-img-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-primary);
+    }
+
+    .history-img-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .history-img-caption {
+      padding: 14px 16px;
+      font-size: 0.84rem;
+      color: #CBD5E1;
+      line-height: 1.45;
+      background: rgba(15, 23, 42, 0.85);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* PROCESO 3 PASOS */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+
+    .process-step {
+      background: var(--bg-card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius-2xl);
+      padding: 28px 22px;
+      position: relative;
+    }
+
+    .step-num {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .process-step h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* VIDEO SECTION */
+    .video-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-2xl);
+      padding: 28px;
+      max-width: 850px;
+      margin: 0 auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #000;
+      margin-bottom: 20px;
+    }
+
+    .video-wrapper iframe, .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* CENTRO DE CONSULTA & COMPARATIVA */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 40px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+    }
+
+    .comparison-table th, .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+
+    .comparison-table th {
+      background: rgba(11, 19, 38, 0.7);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(212, 175, 55, 0.04);
+    }
+
+    /* FAQ ACCORDION */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--gold-primary);
+    }
+
+    .faq-question {
+      padding: 18px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #F8FAFC;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: #CBD5E1;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      color: var(--gold-primary);
+      transition: transform 0.2s ease;
+    }
+
+    /* PACTUM CONTACT CARD */
+    .pactum-resource-card {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(15, 23, 42, 0.94) 100%);
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-2xl);
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+      margin-top: 24px;
+    }
+
+    .pactum-resource-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .pactum-resource-card p {
+      color: #CBD5E1;
+      font-size: 0.9rem;
+      max-width: 640px;
+      margin: 0 auto 22px;
+      line-height: 1.5;
+    }
+
+    .pactum-details-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 20px;
+      text-align: left;
+      margin-bottom: 22px;
+      background: rgba(7, 13, 27, 0.75);
+      padding: 20px 24px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .pactum-details-grid { 
+        grid-template-columns: 1fr;
+        padding: 18px 16px;
+        gap: 16px;
+      }
+    }
+
+    .pactum-detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .pactum-detail-item strong {
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 800;
+    }
+
+    .pactum-detail-item span,
+    .pactum-detail-item a {
+      font-size: 0.92rem;
+      color: #F8FAFC;
+      line-height: 1.45;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .pactum-detail-item a:hover {
+      color: var(--gold-primary);
+      text-decoration: underline;
+    }
+
+    /* FOOTER FALDÓN DORADO MAESTRO */
+    .brand-footer-banner {
+      width: 100%;
+      background: var(--gold-gradient);
+      color: #070D1B;
+      padding: 20px 24px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* STICKY FLOATING CHAT WIDGET persistent */
+    .floating-chat-trigger {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      background: linear-gradient(135deg, #1E40AF 0%, #38BDF8 100%);
+      border: 2px solid var(--gold-primary);
+      border-radius: 50px;
+      padding: 10px 20px 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(56, 189, 248, 0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .floating-chat-trigger:hover {
+      transform: scale(1.05);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.7);
+    }
+
+    .avatar-float {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #070D1B;
+      border: 2px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: #22C55E;
+      border: 2px solid #070D1B;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      box-shadow: 0 0 8px #22C55E;
+    }
+
+    /* MODAL CHAT CONTAINER */
+    .chat-modal-window {
+      position: fixed;
+      bottom: 86px;
+      right: 24px;
+      width: 380px;
+      max-width: calc(100vw - 32px);
+      height: 580px;
+      max-height: calc(100vh - 120px);
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      z-index: 9998;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
+      display: none;
+      flex-direction: column;
+    }
+
+    .chat-modal-window.open {
+      display: flex;
+    }
+
+    .chat-topbar-modal {
+      background: rgba(7, 13, 27, 0.96);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-modal-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-modal-title h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #FFFFFF;
+    }
+
+    .chat-modal-title p {
+      font-size: 0.72rem;
+      color: var(--cyan-neon);
+    }
+
+    .close-chat-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    .close-chat-btn:hover { color: #FFFFFF; }
+
+    #n8n-chat-container {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: rgba(7, 13, 27, 0.75);
+      position: relative;
+    }
+
+    #n8n-chat-container .chat-wrapper,
+    #n8n-chat-container .chat-container,
+    #n8n-chat-container .chat-window,
+    #n8n-chat-container .chat-layout {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      position: relative !important;
+      inset: auto !important;
+      background: transparent !important;
+    }
+
+    #n8n-chat-container .chat-header {
+      display: none !important;
+    }
+
+    /* BOTÓN Y MODAL HOMOLOGAR CONTRATO */
+    .btn-main-homologar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: var(--gold-gradient);
+      color: #070D1B;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.12rem;
+      padding: 16px 36px;
+      border-radius: var(--radius-full);
+      border: 2px solid #FFF5D6;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.45), 0 0 20px rgba(253, 230, 138, 0.3);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-main-homologar::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255,255,255,0.45), transparent);
+      transform: rotate(30deg);
+      animation: shineGold 4s infinite linear;
+    }
+
+    @keyframes shineGold {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      20%, 100% { transform: translateX(100%) rotate(30deg); }
+    }
+
+    .btn-main-homologar:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(212, 175, 55, 0.65), 0 0 30px rgba(253, 230, 138, 0.5);
+    }
+
+    .btn-main-homologar:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .btn-main-homologar .btn-icon {
+      font-size: 1.4rem;
+    }
+
+    .btn-main-homologar .btn-texts {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    .btn-main-homologar .btn-title {
+      font-weight: 900;
+      font-size: 1.08rem;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-main-homologar .btn-subtitle {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #3B2005;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-main-homologar .btn-arrow {
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-main-homologar:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* MODAL FORMULARIO DE HOMOLOGACIÓN */
+    .homologar-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 9, 20, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .homologar-modal-overlay.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .homologar-modal-card {
+      background: rgba(12, 26, 54, 0.96);
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-2xl);
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 175, 55, 0.25);
+      padding: 32px 28px 28px;
+      position: relative;
+      animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalSlideUp {
+      from { transform: translateY(30px) scale(0.96); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .modal-close-icon {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #E2E8F0;
+      font-size: 1.4rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1;
+    }
+
+    .modal-close-icon:hover {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: #EF4444;
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .homologar-form-header {
+      text-align: center;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .homologar-form-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.35rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .homologar-form-header p {
+      font-size: 0.84rem;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FDE68A;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(7, 13, 27, 0.85);
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(148, 163, 184, 0.45);
+      font-weight: 400;
+      opacity: 1;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #38BDF8;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+    }
+
+    .form-group select option {
+      background: #0B1326;
+      color: #FFFFFF;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 85px;
+    }
+
+    .btn-submit-homologar {
+      width: 100%;
+      background: var(--gold-gradient);
+      color: #070D1B;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 15px;
+      border-radius: var(--radius-xl);
+      border: 1px solid #FFF5D6;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .btn-submit-homologar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.65);
+    }
+
+    .btn-submit-homologar:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-security-note {
+      text-align: center;
+      font-size: 0.76rem;
+      line-height: 1.45;
+      color: #94A3B8;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .form-security-note .sec-main-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #94A3B8;
+    }
+
+    .form-security-note .sec-email {
+      color: #FDE68A;
+      font-weight: 600;
+    }
+
+    .form-security-note .sec-sub {
+      color: #94A3B8;
+      font-size: 0.73rem;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVEGACIÓN Y HEADER GLASSMORPHISM -->
-  <header class="header-nav" id="headerNav">
-    <div class="container nav-container">
-      <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
-        <img src="assets/images/logo-light.png" alt="MASC Justicia Alternativa Chihuahua Logo" class="brand-logo-img">
-      </a>
-
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#virtudes" class="nav-link">Virtudes MASC</a></li>
-          <li><a href="#poliza-vs-masc" class="nav-link">Póliza vs. MASC</a></li>
-          <li><a href="#comparativa" class="nav-link">Comparativa</a></li>
-          <li><a href="#marco-legal" class="nav-link">Marco Legal</a></li>
-          <li><a href="#bufete-sala" class="nav-link">Nuestra Sala</a></li>
-          <li><a href="#faqs" class="nav-link">FAQs</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="#contacto" class="btn btn-primary nav-cta-btn">Agendar Asesoría</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">☰</button>
+  <!-- HEADER STICKY -->
+  <header>
+    <a href="#" class="brand">
+      <img src="logo_pactum_gold.png" alt="PACTUM" class="brand-logo-img" style="height: 44px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7)); border-radius: 50%;" />
+      <div class="brand-text">
+        <h1>MASC PACTUM CHIHUAHUA</h1>
+        <p>Justicia Alternativa · Sala de Mediación Privada Autorizada</p>
       </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#que-es">¿Qué es?</a></li>
+      <li><a href="#historia">Historia de PACTUM</a></li>
+      <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#consulta">Centro de Consulta</a></li>
+      <li><a href="javascript:void(0)" onclick="openHomologarModal()" style="color: #FDE68A; font-weight: 700;">✍️ Validar Contrato</a></li>
+    </ul>
+
+    <div class="header-cta">
+      <a href="https://wa.me/526145510188?text=Hola,%20solicito%20informaci%C3%B3n%20sobre%20el%20Convenio%20MASC%20Pactum" target="_blank" class="pactum-badge" style="text-decoration: none; color: inherit; transition: transform 0.2s ease;">
+        <span>🏛️</span> Sala Autorizada: PACTUM
+      </a>
     </div>
   </header>
 
-  <main>
+  <!-- HERO SECTION FIEL A IMAGEN DE MARCA OFICIAL -->
+  <div class="hero-container">
+    <img src="logo_pactum.png" alt="PACTUM" class="hero-pactum-logo" style="width: 135px; height: auto; object-fit: contain; margin: 0 auto 16px; display: block; filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.75));" />
+    <div class="brand-title-sub">— MASC PACTUM CHIHUAHUA — JUSTICIA ALTERNATIVA —</div>
 
-    <!-- SECCIÓN 1: HERO SECTION -->
-    <section class="hero-section" id="inicio">
-      <div class="hero-bg"></div>
-      <div class="container hero-content">
-        
-        <div class="hero-text-side">
-          <div class="hero-badge-ija">
-            <span>🏛️</span>
-            <span>Sala Privada N° 042 | Certificada por el IJA Chihuahua</span>
-          </div>
+    <h1 class="hero-headline">
+      ¿CUÁNTAS COMISIONES HAS PERDIDO POR UN ARRENDADOR TEMEROSO?
+      <span>Cierra Rentas y Ventas con 100% Certeza Jurídica</span>
+    </h1>
 
-          <h1 class="heading-primary">
-            Protección legal inmobiliaria inmediata: <span class="text-gold">Dile adiós a los juicios eternos</span>
-          </h1>
+    <p class="hero-subheadline">
+      "Ahora tu contrato tiene valor de sentencia ejecutoriada. El desalojo es inmediato."
+    </p>
 
-          <p class="hero-subtitle">
-            Mediante la <strong>Justicia Alternativa (MASC)</strong>, tus contratos de arrendamiento y compraventa adquieren la fuerza ejecutiva de una <strong>sentencia judicial definitiva (Cosa Juzgada)</strong> desde el primer día. Sin demandas extenuantes ni años de litigio.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#contacto" class="btn btn-primary">
-              <span>Agendar Asesoría Gratis</span>
-              <span>➔</span>
-            </a>
-            <a href="#virtudes" class="btn btn-secondary">
-              <span>Ver Beneficios Clave</span>
-            </a>
-          </div>
-
-          <div class="hero-trust-bar">
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Validez Judicial IJA</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">95%</span>
-              <span class="stat-label">Ahorro de Tiempo</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">0</span>
-              <span class="stat-label">Juicios de Desalojo Largos</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-card-side">
-          <div class="hero-auth-card">
-            <div class="auth-card-header">
-              <div class="auth-seal-icon">📜</div>
-              <div class="auth-title-group">
-                <h4>Convenio MASC Certificado</h4>
-                <p>Poder Judicial del Estado de Chihuahua</p>
-              </div>
-            </div>
-
-            <div class="auth-features-list">
-              <div class="auth-feature-item">
-                <span class="check-icon-gold">✓</span>
-                <span><strong>Efecto de Sentencia Ejecutoriada:</strong> Elevado a rango de Cosa Juzgada.</span>
-              </div>
-              <div class="auth-feature-item">
-                <span class="check-icon-gold">✓</span>
-                <span><strong>Ejecución Directa en Semanas:</strong> Salta el juicio ordinario de 2 años directo al juez de ejecución.</span>
-              </div>
-              <div class="auth-feature-item">
-                <span class="check-icon-gold">✓</span>
-                <span><strong>Blindaje Dual Preventivo:</strong> Aplica a Contratos de Arrendamiento y Compraventas.</span>
-              </div>
-              <div class="auth-feature-item">
-                <span class="check-icon-gold">✓</span>
-                <span><strong>Inscripción Oficial IJA:</strong> Depositado en el Registro de Mecanismos del IJA.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <!-- 4 BRAND CARDS CON CHECKS DORADOS -->
+    <div class="brand-cards-grid">
+      <div class="brand-card">
+        <div class="check-icon">✓</div>
+        <p>Cierra rentas difíciles sin miedo</p>
       </div>
-    </section>
-
-    <!-- SECCIÓN 2: VIRTUDES EN ARRENDAMIENTO Y COMPRAVENTA -->
-    <section class="section-padding virtudes-section" id="virtudes">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">Soluciones Específicas</span>
-          <h2 class="heading-secondary">Virtudes de la Justicia Alternativa en el Sector Inmobiliario</h2>
-          <p class="section-description">
-            Diseñamos e inscribimos Convenios MASC preventivos adaptados al mercado de Bienes Raíces en Chihuahua.
-          </p>
-        </div>
-
-        <div class="virtudes-grid">
-          
-          <!-- Tarjeta Arrendamiento -->
-          <div class="virtud-card">
-            <div class="virtud-header">
-              <div class="virtud-icon">🔑</div>
-              <div class="virtud-title-tag">
-                <span>Enfoque Preventivo</span>
-                <h3>Arrendamiento Seguro</h3>
-              </div>
-            </div>
-
-            <ul class="virtud-list">
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Firma de Convenio Paralelo:</strong> Se suscribe el convenio MASC junto con el contrato de arrendamiento inicial.</span>
-              </li>
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Desocupación Exprés del Inmueble:</strong> Garantiza la devolución del inmueble en semanas por falta de pago o vencimiento de plazo.</span>
-              </li>
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Recuperación Efectiva de Rentas:</strong> Embargo e interrupción de servicios de forma directa sin requerir juicio declarativo previo.</span>
-              </li>
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Tranquilidad para el Inquilino Cumplidor:</strong> Brinda reglas claras de conservación, mantenimiento y devolución de depósito.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Tarjeta Compraventa -->
-          <div class="virtud-card">
-            <div class="virtud-header">
-              <div class="virtud-icon">🏛️</div>
-              <div class="virtud-title-tag">
-                <span>Certeza Patrimonial</span>
-                <h3>Compraventa de Inmuebles</h3>
-              </div>
-            </div>
-
-            <ul class="virtud-list">
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Certeza en la Entrega Física:</strong> Pacto estricto de posesión y entrega con penalizaciones ejecutorias automáticas.</span>
-              </li>
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Penalizaciones por Impago:</strong> Ejecución inmediata ante mora en los pagos diferidos o retrasos en el enganche.</span>
-              </li>
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Cumplimiento de Escrituración:</strong> Garantía de firma notarial dentro del plazo sin demandas de otorgamiento.</span>
-              </li>
-              <li class="virtud-item">
-                <span class="virtud-bullet-icon">✔</span>
-                <span><strong>Resolución de Vicios Ocultos:</strong> Mecanismo pacífico predeterminado para reparar desperfectos estructurales sin litigios.</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Banner Destacado Concepto Clave: COSA JUZGADA -->
-        <div class="cosa-juzgada-banner">
-          <div class="cosa-juzgada-icon">⚖️</div>
-          <div class="cosa-juzgada-content">
-            <h3>Concepto Jurídico Clave: Categoría de COSA JUZGADA</h3>
-            <p>
-              El convenio celebrado en nuestra <strong>Sala Privada Autorizada N° 042</strong> y sancionado por el Instituto de Justicia Alternativa del Poder Judicial de Chihuahua ostenta por ley la calidad de <strong>Sentencia Ejecutoriada</strong>. Si alguna parte incumple, no se demanda; se procede directamente a la <strong>Vía de Ejecución Forzosa</strong> ante un Juez.
-            </p>
-          </div>
-        </div>
-
+      <div class="brand-card">
+        <div class="check-icon">✓</div>
+        <p>Evita juicios prolongados (desalojo inmediato)</p>
       </div>
-    </section>
-
-    <!-- SECCIÓN 3: VENTAJAS CRÍTICAS ANTE PÓLIZA DE ARRENDAMIENTO -->
-    <section class="section-padding poliza-section" id="poliza-vs-masc">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">Análisis de Mercado</span>
-          <h2 class="heading-secondary">Convenio MASC Privado vs. Póliza Jurídica Tradicional</h2>
-          <p class="section-description">
-            Descubre por qué las pólizas tradicionales de arrendamiento en México resultan obsoletas ante la fuerza de un Convenio MASC Autorizado.
-          </p>
-        </div>
-
-        <div class="comparison-dual-container">
-          
-          <!-- Póliza Jurídica Tradicional -->
-          <div class="comp-card tradicional">
-            <span class="comp-card-badge">Mecanismo Tradicional</span>
-            <h3 class="comp-card-title">Póliza Jurídica Comercial</h3>
-            <p class="comp-card-subtitle">Solo es una póliza que financia abogados para ir a juicio</p>
-
-            <ul class="comp-points-list">
-              <li class="comp-point-item">
-                <span class="icon-negative">✕</span>
-                <span><strong>Te obliga a demandar:</strong> Requiere iniciar un juicio ordinario civil de arrendamiento en juzgados civiles.</span>
-              </li>
-              <li class="comp-point-item">
-                <span class="icon-negative">✕</span>
-                <span><strong>Proceso extenuante (1 a 2 Años):</strong> El inquilino moroso puede ampararse y prolongar la estancia sin pagar ni desocupar.</span>
-              </li>
-              <li class="comp-point-item">
-                <span class="icon-negative">✕</span>
-                <span><strong>Altos Costos Indirectos:</strong> Pérdida de 12 a 24 meses de renta mientras dura el litigio judicial.</span>
-              </li>
-              <li class="comp-point-item">
-                <span class="icon-negative">✕</span>
-                <span><strong>Sin Fuerza de Sentencia:</strong> La póliza en sí misma no es un título ejecutivo de desalojo.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Convenio MASC Privado -->
-          <div class="comp-card masc">
-            <span class="comp-card-badge">Nuestra Solución Superior</span>
-            <h3 class="comp-card-title">Convenio MASC Inmobiliario</h3>
-            <p class="comp-card-subtitle">Sentencia ejecutoriada pre-constituida con validez IJA</p>
-
-            <ul class="comp-points-list">
-              <li class="comp-point-item">
-                <span class="icon-positive">★</span>
-                <span><strong>OMITE EL JUICIO COMPLETO:</strong> No requiere pasar por la etapa de juicio, pruebas o alegatos.</span>
-              </li>
-              <li class="comp-point-item">
-                <span class="icon-positive">★</span>
-                <span><strong>Desalojo en Cuestión de Semanas:</strong> Al ser Cosa Juzgada, el juez ordena directamente la ejecución forzosa.</span>
-              </li>
-              <li class="comp-point-item">
-                <span class="icon-positive">★</span>
-                <span><strong>Protección Real del Patrimonio:</strong> Garantiza la pronta recuperación física del inmueble y el cobro diferido.</span>
-              </li>
-              <li class="comp-point-item">
-                <span class="icon-positive">★</span>
-                <span><strong>Mayor Eficiencia Económica:</strong> Inversión preventiva única con validez legal permanente.</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
+      <div class="brand-card">
+        <div class="check-icon">✓</div>
+        <p>Valor de sentencia ejecutoriada desde el día uno</p>
       </div>
-    </section>
-
-    <!-- SECCIÓN 4: TABLA COMPARATIVA ELABORADA -->
-    <section class="section-padding tabla-section" id="comparativa">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">Comparativa Directa</span>
-          <h2 class="heading-secondary">Justicia Tradicional (Juzgados) vs. Justicia Alternativa (MASC)</h2>
-          <p class="section-description">
-            Evaluación técnica de los aspectos determinantes para la resolución de conflictos inmobiliarios.
-          </p>
-        </div>
-
-        <div class="table-wrapper">
-          <table class="comp-table">
-            <thead>
-              <tr>
-                <th>Criterio de Evaluación</th>
-                <th>Justicia Tradicional (Juzgados Civil)</th>
-                <th>Justicia Alternativa MASC (Nuestra Sala)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="criterion">⏱️ Tiempo de Resolución</td>
-                <td class="tradicional-col">
-                  <strong>1 a 3 Años de Litigio</strong><br>
-                  Sujeto a cargas de trabajo, amparos y apelaciones.
-                </td>
-                <td class="masc-col">
-                  <span class="table-status-tag tag-good">✓ 1 a 3 Semanas</span><br>
-                  O firmado como convenio preventivo desde el día 1.
-                </td>
-              </tr>
-              <tr>
-                <td class="criterion">💰 Costo y Honorarios</td>
-                <td class="tradicional-col">
-                  <strong>Altos y Variables</strong><br>
-                  Honorarios por instancia, peritajes y pérdida continuada de rentas.
-                </td>
-                <td class="masc-col">
-                  <span class="table-status-tag tag-good">✓ Tarifa Fija y Económica</span><br>
-                  Inversión accesible sin costos ocultos procesales.
-                </td>
-              </tr>
-              <tr>
-                <td class="criterion">🤝 Proceso y Clima</td>
-                <td class="tradicional-col">
-                  <span class="table-status-tag tag-bad">✕ Conflictivo y Público</span><br>
-                  Audiencias públicas, litigio hostil y desgaste emocional.
-                </td>
-                <td class="masc-col">
-                  <span class="table-status-tag tag-good">✓ Confidencial y Pacífico</span><br>
-                  Sesiones privadas en Sala Autorizada con diálogo constructivo.
-                </td>
-              </tr>
-              <tr>
-                <td class="criterion">✍️ Origen de la Solución</td>
-                <td class="tradicional-col">
-                  <strong>Impuesta por un Juez</strong><br>
-                  Un tercero decide el resultado sin flexibilidad para las partes.
-                </td>
-                <td class="masc-col">
-                  <span class="table-status-tag tag-good">✓ Diseñada por las Partes</span><br>
-                  Acuerdo a la medida consensuado libremente por ambos.
-                </td>
-              </tr>
-              <tr>
-                <td class="criterion">🏛️ Fuerza y Validez Legal</td>
-                <td class="tradicional-col">
-                  <strong>Requiere Sentencia Firme</strong><br>
-                  Tras agotar todas las instancias ordinarias y extraordinarias.
-                </td>
-                <td class="masc-col">
-                  <span class="table-status-tag tag-good">✓ COSA JUZGADA Inmediata</span><br>
-                  Certificado e inscrito ante el IJA del Poder Judicial de Chihuahua.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
+      <div class="brand-card">
+        <div class="check-icon">✓</div>
+        <p>Asegura tu comisión con respaldo jurídico</p>
       </div>
-    </section>
+    </div>
 
-    <!-- SECCIÓN 5: HISTORIA Y MARCO LEGAL EN MÉXICO Y CHIHUAHUA -->
-    <section class="section-padding marco-legal-section" id="marco-legal">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag light">Sustento Constitucional</span>
-          <h2 class="heading-secondary light">Historia y Marco Legal de los MASC en México y Chihuahua</h2>
-          <p class="section-description light">
-            Los Mecanismos Alternativos de Solución de Controversias cuentan con el máximo respaldo legal en la República Mexicana.
-          </p>
+    <!-- BOTÓN PRINCIPAL VALIDAR CONTRATO (HERO CTA) -->
+    <div style="margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%;">
+      <button class="btn-main-homologar" onclick="openHomologarModal()">
+        <span class="btn-icon">⚖️</span>
+        <div class="btn-texts">
+          <span class="btn-title">Me Interesa Validar un Contrato</span>
+          <span class="btn-subtitle">Blindaje Inmediato con Fuerza de Sentencia Ejecutoriada</span>
         </div>
+        <span class="btn-arrow">➔</span>
+      </button>
+      <p style="font-size: 0.84rem; color: #CBD5E1; display: flex; align-items: center; gap: 6px;">
+        <span style="color: #38BDF8;">🔒</span> Solicitud directa con Mediador Privado Certificado · Sala Pactum Chihuahua
+      </p>
+    </div>
+  </div>
 
-        <div class="legal-grid">
-          
-          <div class="legal-card">
-            <div class="legal-card-header">
-              <span class="legal-flag-icon">🇲🇽</span>
-              <h3>Reforma Constitucional 2008 (México)</h3>
-            </div>
-            <p>
-              En junio de 2008 se modificó el <strong>Artículo 17 de la Constitución Política de los Estados Unidos Mexicanos</strong>, elevando a rango constitucional la obligación del Estado de prever mecanismos alternativos de solución de controversias. Se reconoció la resolución pacífica de conflictos como un derecho humano fundamental.
-            </p>
-          </div>
+  <!-- SECCIÓN 1: ¿QUÉ ES LA JUSTICIA ALTERNATIVA (MASC)? -->
+  <section id="que-es">
+    <div class="section-header">
+      <span class="section-tag">Fundamento Jurídico</span>
+      <h2 class="section-title">¿Qué es los <span>MASC</span> y la Justicia Alternativa?</h2>
+    </div>
 
-          <div class="legal-card">
-            <div class="legal-card-header">
-              <span class="legal-flag-icon">🏛️</span>
-              <h3>Chihuahua: Estado Pionero Nacional</h3>
-            </div>
-            <p>
-              El Estado de Chihuahua promulgó la <strong>Ley de Mecanismos Alternativos de Solución de Controversias del Estado de Chihuahua</strong>, consolidándose como líder nacional en la acreditación de Salas Privadas de Mediación y Conciliación para desahogar la carga de los juzgados civiles.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Subsección ¿De quién depende? -->
-        <div class="ija-supervision-box">
-          <div class="ija-logo-badge">
-            <div class="ija-seal-big">🦅</div>
-            <h4>IJA CHIHUAHUA</h4>
-            <p>Poder Judicial del Estado</p>
-          </div>
-
-          <div class="ija-details">
-            <h3>¿De quién depende nuestra Acreditación Oficial?</h3>
-            <p>
-              Nuestra <strong>Sala Privada N° 042</strong> está formalmente autorizada, certificada y supervisada por el <strong>Instituto de Justicia Alternativa (IJA) del Poder Judicial del Estado de Chihuahua</strong>.
-            </p>
-            <p>
-              Cada convenio elaborado por nuestros mediadores es revisado y sancionado por el IJA, garantizando la observancia absoluta del orden público, la equidad de las partes y la certeza de su registro oficial.
-            </p>
-          </div>
-        </div>
-
+    <div class="info-dual-grid">
+      <div class="info-card-text">
+        <h3>Mecanismos Alternativos de Solución de Controversias</h3>
+        <p>
+          Los <strong>MASC</strong> son herramientas legales reconocidas por la Constitución Mexicana y la legislación de Chihuahua que permiten resolver conflictos y estructurar acuerdos de arrendamiento o compraventa con absoluta validez oficial.
+        </p>
+        <p>
+          A través de un <strong>Convenio de Mediación MASC</strong>, propietario e inquilino firman voluntariamente un acuerdo con el respaldo de un Mediador Privado Certificado. Este documento es ratificado y elevado a rango de <strong>Sentencia Judicial Definitiva (Cosa Juzgada)</strong>.
+        </p>
       </div>
-    </section>
 
-    <!-- SECCIÓN 6: NUESTRO BUFETE Y SALA DE MEDIACIÓN -->
-    <section class="section-padding firm-section" id="bufete-sala">
-      <div class="container">
-        
-        <div class="firm-grid">
-          
-          <div class="firm-image-wrapper">
-            <img src="assets/images/mediation_room.png" alt="Sala de Mediación Privada Autorizada en Chihuahua" class="firm-img">
-            <div class="firm-img-badge">
-              <h5>Sala Neutral Acreditada</h5>
-              <p>Espacio certificado para la conciliación en Chihuahua, Chih.</p>
-            </div>
-          </div>
-
-          <div class="firm-content">
-            <span class="section-tag">Nuestra Firma Legal</span>
-            <h2 class="heading-secondary">Bufete de Abogados y Centro de Mediación Privada</h2>
-            <p>
-              Somos una firma de abogados especialistas en <strong>Derecho Inmobiliario, Mercantil y Justicia Alternativa</strong>. Contamos con mediadores y conciliadores certificados bajo cédula oficial emitida por el Instituto de Justicia Alternativa.
-            </p>
-            <p>
-              Nuestra Sala de Mediación Autorizada fue diseñada para brindar un ambiente corporativo neutral, cómodo y sumamente discreto. Alejar a las partes del entorno hostil de los juzgados fomenta acuerdos ganar-ganar duraderos.
-            </p>
-
-            <div class="firm-features-grid">
-              <div class="firm-feat-card">
-                <div class="firm-feat-icon">📜</div>
-                <div class="firm-feat-text">
-                  <h5>Mediadores Certificados</h5>
-                  <p>Acreditación vigente IJA</p>
-                </div>
-              </div>
-              <div class="firm-feat-card">
-                <div class="firm-feat-icon">🛡️</div>
-                <div class="firm-feat-text">
-                  <h5>Instalaciones Privadas</h5>
-                  <p>Máxima discreción y confort</p>
-                </div>
-              </div>
-              <div class="firm-feat-card">
-                <div class="firm-feat-icon">⚡</div>
-                <div class="firm-feat-text">
-                  <h5>Trámites Agiles</h5>
-                  <p>Inscripción exprés IJA</p>
-                </div>
-              </div>
-              <div class="firm-feat-card">
-                <div class="firm-feat-icon">🤝</div>
-                <div class="firm-feat-text">
-                  <h5>Imparcialidad Absoluta</h5>
-                  <p>Garantía de equidad jurídica</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+      <div class="img-frame">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop" alt="Firma de trato e inmuebles de lujo" />
+        <div class="img-overlay-tag">
+          🤝 Certeza en el cierre: Contratos blindados sin riesgo de litigio.
         </div>
-
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECCIÓN 7: PREGUNTAS FRECUENTES (FAQS ACCORDION) -->
-    <section class="section-padding faq-section" id="faqs">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">Resolviendo Dudas</span>
-          <h2 class="heading-secondary">Preguntas Frecuentes sobre Convenios MASC</h2>
-          <p class="section-description">
-            Respuestas claras a los cuestionamientos más habituales sobre los Mecanismos Alternativos de Solución de Controversias.
-          </p>
-        </div>
+  <!-- SECCIÓN 2: HISTORIA DE PACTUM Y MARCO LEGAL EN CHIHUAHUA -->
+  <section id="historia">
+    <div class="section-header">
+      <span class="section-tag">Trayectoria & Vanguardia</span>
+      <h2 class="section-title">Historia de <span>PACTUM y la Justicia Alternativa</span></h2>
+    </div>
 
-        <div class="faq-accordion-container">
-          
-          <!-- Pregunta 1 -->
-          <div class="faq-item">
-            <button class="faq-header">
-              <span>¿Qué pasa si la otra parte incumple lo pactado en el Convenio MASC?</span>
-              <span class="faq-icon-toggle">▼</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-body">
-                Al tener la categoría de <strong>Cosa Juzgada (sentencia ejecutoriada)</strong>, no necesitas entablar un juicio ordinario de 2 años. Se acude directamente ante un Juez Civil en <strong>Vía de Ejecución Forzosa</strong>. El juez emitirá la orden de desocupación, entrega del inmueble o embargo de bienes en cuestión de semanas.
-              </div>
-            </div>
-          </div>
+    <div class="history-card">
+      <h3>El Estado Pionero en Mediación y Paz Jurídica</h3>
+      <p>
+        Chihuahua ha sido referente nacional en la implementación de la Ley de Justicia Alternativa, consolidando al <strong>Tribunal Superior de Justicia del Estado (TSJE)</strong> y a su <strong>Instituto de Justicia Alternativa (IJA)</strong> a la vanguardia en eficacia procesal y resolución pacífica de controversias.
+      </p>
+      <p>
+        Para agilizar los tiempos de atención e integrar el servicio al sector inmobiliario privado, la legislación autorizó la creación de los <strong>Centros y Salas Privadas de Mediación</strong>, dotando a sus convenios y acuerdos del mismo valor y fuerza que una <strong>Sentencia Judicial Definitiva (Cosa Juzgada)</strong>.
+      </p>
 
-          <!-- Pregunta 2 -->
-          <div class="faq-item">
-            <button class="faq-header">
-              <span>¿Es un procedimiento seguro tanto para el propietario como para el inquilino/comprador?</span>
-              <span class="faq-icon-toggle">▼</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-body">
-                Absolutamente. Los Convenios MASC están diseñados bajo los principios de voluntariedad, equidad e imparcialidad. Para el propietario representa certeza en la devolución del inmueble; para el inquilino o comprador garantiza reglas claras sobre condiciones de entrega, reparaciones y vigencia sin abusos.
-              </div>
-            </div>
-          </div>
+      <hr style="border: none; border-top: 1px solid rgba(212, 175, 55, 0.25); margin: 24px 0;" />
 
-          <!-- Pregunta 3 -->
-          <div class="faq-item">
-            <button class="faq-header">
-              <span>¿En qué momento exacto se debe firmar el convenio MASC?</span>
-              <span class="faq-icon-toggle">▼</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-body">
-                Lo ideal y más recomendado es celebrarlo y firmarlo de forma <strong>preventiva al momento de suscribir el contrato principal</strong> de arrendamiento o compraventa. No obstante, también puede tramitarse cuando ya existe un desacuerdo incipiente para evitar escalar a los tribunales.
-              </div>
-            </div>
-          </div>
+      <h4>🏛️ Nacimiento e Inauguración de PACTUM (Centro Privado No. 1)</h4>
+      <p>
+        Contando con la presencia de distinguidas autoridades del <strong>Tribunal Superior de Justicia del Estado de Chihuahua (TSJE)</strong>, así como personal y directivos del <strong>Instituto de Justicia Alternativa (IJA)</strong>, fue formalmente inaugurado el primer Centro de Mediación del Estado, llamado <strong>PACTUM · Centro de Mediación Privado No. 1</strong>.
+      </p>
 
-          <!-- Pregunta 4 -->
-          <div class="faq-item">
-            <button class="faq-header">
-              <span>¿Cuál es la diferencia entre un contrato ratificado ante Notario y un Convenio MASC del IJA?</span>
-              <span class="faq-icon-toggle">▼</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-body">
-                Un contrato ratificado ante Notario Público da fecha cierta y autentica la firma de las partes, pero <strong>no otorga la categoría de Cosa Juzgada</strong> para desocupar un inmueble. Si el inquilino no sale, con el Notario de todas formas debes ir a juicio. El Convenio MASC del IJA <strong>sí tiene rango de sentencia judicial ejecutoriada</strong>.
-              </div>
-            </div>
-          </div>
-
-          <!-- Pregunta 5 -->
-          <div class="faq-item">
-            <button class="faq-header">
-              <span>¿Aplica para inmuebles comerciales, industriales y residenciales en Chihuahua?</span>
-              <span class="faq-icon-toggle">▼</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-body">
-                Sí, opera con total validez legal para cualquier tipo de contrato inmobiliario en el estado de Chihuahua: casas habitación, departamentos, locales comerciales, bodegas industriales y terrenos en compraventa a plazos.
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+      <p style="margin-bottom: 8px;">
+        Este centro pionero está conformado por un equipo multidisciplinario de Mediadores Privados Certificados:
+      </p>
+      <div class="mediadores-chips">
+        <div class="mediador-chip">⚖️ Lic. Ricardo Gutiérrez</div>
+        <div class="mediador-chip">⚖️ Mtro. Carlos Enríquez</div>
+        <div class="mediador-chip">⚖️ Lic. Raquel Zafiro</div>
       </div>
-    </section>
 
-    <!-- SECCIÓN 8: CONTACTO Y FOOTER -->
-    <section class="section-padding contacto-section" id="contacto">
-      <div class="container">
-        
-        <div class="contacto-grid">
-          
-          <div class="contact-info-side">
-            <span class="section-tag light">Atención Personalizada</span>
-            <h3>Protege tu Inmueble con Certeza Jurídica Hoy</h3>
-            <p>
-              Agenda una sesión informativa gratuita en nuestra Sala Privada de Mediación en Chihuahua. Analizamos tus contratos de arrendamiento o compraventa.
-            </p>
+      <p>
+        <strong>PACTUM</strong> nace de la necesidad de que en Chihuahua exista un Centro de Mediación de excelencia que apoye a los ciudadanos, propietarios y profesionales inmobiliarios a resolver pacíficamente sus conflictos y blindar sus operaciones con total certeza jurídica.
+      </p>
+      <p>
+        Actualmente, sus oficinas ejecutivas ubicadas en <strong>C. Miguel Ahumada #153 (Col. Industrial)</strong>, cuentan con <strong>2 salas privadas de mediación</strong> equipadas para brindar una atención ejecutiva, confidencial y de la más alta calidad técnica.
+      </p>
 
-            <div class="info-cards-list">
-              <div class="info-card-item">
-                <div class="info-icon">📍</div>
-                <div class="info-details">
-                  <h5>Dirección de Nuestra Sala</h5>
-                  <p>Av. de la Empresa #3110, Edificio Sterling Plaza, Piso 4<br>Distrito Uno, Chihuahua, Chih., C.P. 31114</p>
-                </div>
-              </div>
-
-              <div class="info-card-item">
-                <div class="info-icon">📞</div>
-                <div class="info-details">
-                  <h5>Teléfono Directo & WhatsApp</h5>
-                  <p>
-                    <a href="tel:6145327446">(614) 532-7446</a> | 
-                    <a href="https://wa.me/526145327446" target="_blank" rel="noopener">WhatsApp: (614) 532-7446</a>
-                  </p>
-                </div>
-              </div>
-
-              <div class="info-card-item">
-                <div class="info-icon">✉️</div>
-                <div class="info-details">
-                  <h5>Correo Electrónico</h5>
-                  <p><a href="mailto:mascchih@gmail.com">mascchih@gmail.com</a></p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mapa embebido ficticio de Distrito Uno Chihuahua -->
-            <div class="map-placeholder">
-              <iframe title="Ubicación Sala de Mediación Chihuahua" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5957813204917!2d-106.11585252358897!3d28.641887375659854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea43a75066a3d9%3A0x7ef67252277d3419!2sDistrito%20Uno%2C%20Chihuahua%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+      <!-- GALERÍA DUAL DE INAUGURACIÓN -->
+      <div class="history-gallery-grid">
+        <div class="history-img-card">
+          <img src="inauguracion_corte_liston_pactum.jpg" alt="Corte de listón inaugural PACTUM con autoridades del TSJE e IJA" />
+          <div class="history-img-caption">
+            ✂️ <strong>Corte de Listón Inaugural:</strong> Autoridades del Tribunal Superior de Justicia (TSJE), Instituto de Justicia Alternativa (IJA) y el equipo fundador de mediadores de PACTUM.
           </div>
-
-          <div class="contact-form-side">
-            <h4>Formulario de Asesoría Gratuita</h4>
-            <p>Déjanos tus datos y un especialista en MASC se pondrá en contacto a la brevedad.</p>
-
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="6475af38-2a76-437e-8ba5-ec7d1db4d318">
-              <input type="hidden" name="subject" value="Nueva Solicitud de Asesoría MASC Inmobiliario">
-              <input type="hidden" name="from_name" value="MASC Inmobiliario - Formulario Web">
-              <input type="hidden" name="redirect" value="false">
-              <div class="form-group">
-                <label for="nombre" class="form-label">Nombre Completo *</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Lic. Roberto Gómez" required>
-              </div>
-
-              <div class="form-group">
-                <label for="telefono" class="form-label">Teléfono WhatsApp *</label>
-                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. (614) 532-7446" required>
-              </div>
-
-              <div class="form-group">
-                <label for="correo" class="form-label">Correo Electrónico *</label>
-                <input type="email" id="correo" name="email" class="form-control" placeholder="mascchih@gmail.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="servicio" class="form-label">Tipo de Contrato / Servicio *</label>
-                <select id="servicio" name="servicio" class="form-control" required>
-                  <option value="">Seleccione una opción...</option>
-                  <option value="Arrendamiento Inmobiliario">Arrendamiento Inmobiliario</option>
-                  <option value="Compraventa de Inmueble">Compraventa de Inmueble</option>
-                  <option value="Asesoría Preventiva General">Asesoría Preventiva General</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="mensaje" class="form-label">Mensaje o Detalle del Inmueble</label>
-                <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Describa brevemente su requerimiento..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary form-btn-submit" id="submitBtn">
-                <span>Solicitar Asesoría Legal Sin Costo</span>
-                <span>➔</span>
-              </button>
-            </form>
-          </div>
-
         </div>
 
+        <div class="history-img-card">
+          <img src="inauguracion_fachada_pactum.jpg" alt="Sede Oficial PACTUM Centro de Mediación Privado No. 1" />
+          <div class="history-img-caption">
+            🏛️ <strong>Sede Oficial PACTUM:</strong> Centro de Mediación Privado No. 1 en C. Miguel Ahumada #153, Chihuahua, Chih.
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- SECCIÓN 3: ¿CÓMO FUNCIONA? (3 PASOS) -->
+  <section id="como-funciona">
+    <div class="section-header">
+      <span class="section-tag">Proceso de Blindaje</span>
+      <h2 class="section-title">¿Cómo funciona el <span>Blindaje MASC</span> en 3 Pasos?</h2>
+    </div>
 
-  <!-- FOOTER PRINCIPAL -->
-  <footer class="main-footer">
-    <div class="container">
-      
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
-            <img src="assets/images/logo-light.png" alt="MASC Justicia Alternativa Chihuahua Logo" class="brand-logo-img">
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h4>Asesoría & Diagnóstico</h4>
+        <p>Revisamos la operación de arrendamiento o compraventa para estructurar las cláusulas preventivas idóneas a tu medida.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h4>Firma en Sala PACTUM</h4>
+        <p>Propietario e inquilino firman en las instalaciones ejecutivas privadas de Pactum en Chihuahua capital, con atención personal.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h4>Fuerza de Cosa Juzgada</h4>
+        <p>El convenio se valida y adquiere rango de Sentencia Judicial. Ante cualquier incumplimiento, el desalojo se ejecuta en semanas por Vía de Apremio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: VIDEO PROMOCIONAL -->
+  <section id="video">
+    <div class="section-header">
+      <span class="section-tag">Material Audiovisual</span>
+      <h2 class="section-title">Conoce el <span>Blindaje MASC en Video</span></h2>
+    </div>
+
+    <div class="video-card">
+      <div class="video-wrapper">
+        <!-- Video Promocional Embebido Oficial -->
+        <iframe src="https://www.youtube.com/embed/HM4sVMiVCeA" title="MASC Chihuahua — Justicia Alternativa Inmobiliaria" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p style="color: #CBD5E1; font-size: 0.92rem;">
+        Descubre cómo proteger tu patrimonio, evitar inquilinos morosos y asegurar las comisiones de corretaje inmobiliario con el respaldo de Pactum y MASC Chihuahua.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: CENTRO DE CONSULTA & COMPARATIVA -->
+  <section id="consulta">
+    <div class="section-header">
+      <span class="section-tag">Herramienta de Consulta</span>
+      <h2 class="section-title">Centro de Consulta <span>Legal & FAQ</span></h2>
+    </div>
+
+    <!-- TABLA COMPARATIVA TRIPARTITA -->
+    <div class="table-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criterio Legal</th>
+            <th>Juicio Tradicional Inmobiliario</th>
+            <th>Póliza Jurídica de Arrendamiento</th>
+            <th style="background: rgba(212, 175, 55, 0.2); border-left: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary);">Convenio MASC Chihuahua (Pactum)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tiempo de Recuperación / Desalojo</strong></td>
+            <td>18 a 36 meses (litigio civil prolongado y saturado)</td>
+            <td>12 a 24 meses (abogado incluido, pero el juicio toma el mismo tiempo)</td>
+            <td style="background: rgba(212, 175, 55, 0.08); border-left: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary);"><strong style="color: var(--gold-light);">3 a 6 semanas (Vía de Apremio)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Rango / Fuerza Jurídica</strong></td>
+            <td>Demanda incierta sujeta a contestación y apelaciones</td>
+            <td>Contrato privado; demanda en juzgado desde cero</td>
+            <td style="background: rgba(212, 175, 55, 0.08); border-left: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary);"><strong style="color: var(--gold-light);">Sentencia Ejecutoriada (Cosa Juzgada)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Costo y Frecuencia</strong></td>
+            <td>Alto costo por evento ($25,000 - $60,000+ honorarios)</td>
+            <td>Gasto <strong>anual recurrente</strong> (50% al 80% de una renta cada año en Chihuahua)</td>
+            <td style="background: rgba(212, 175, 55, 0.08); border-left: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary);"><strong style="color: var(--gold-light);">Pago único por convenio</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Riesgo de Rentas Caídas</strong></td>
+            <td>Pérdida acumulada de 1 a 3 años de rentas</td>
+            <td>Pérdida de 1 a 2 años (la póliza rara vez cubre rentas caídas)</td>
+            <td style="background: rgba(212, 175, 55, 0.08); border-left: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary);"><strong style="color: var(--gold-light);">Corte inmediato de pérdidas (Inmueble libre)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Protección de Comisión de Asesor</strong></td>
+            <td>Nula (sin garantía contractual ni penalidad)</td>
+            <td>Nula (solo atiende relación arrendador-inquilino)</td>
+            <td style="background: rgba(212, 175, 55, 0.08); border-left: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary);"><strong style="color: var(--gold-light);">Blindaje total anti-bypass garantizado</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ ACCORDION -->
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          📄 ¿Cuál es la diferencia entre una Póliza Jurídica y un Convenio MASC?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Una póliza jurídica es un contrato privado de prestación de servicios legales (no es un seguro formal). Si el inquilino no paga, la empresa te asigna un abogado, pero ese abogado <strong>tiene que iniciar un juicio ordinario tradicional que tarda de 12 a 24 meses</strong>. En cambio, el <strong>Convenio MASC nace YA con valor de Sentencia Ejecutoriada</strong>, permitiendo recuperar el inmueble en 3 a 6 semanas por Vía de Apremio sin ir a juicio.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          ⚖️ ¿Qué ocurre si el inquilino deja de pagar o no quiere desalojar?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Al tener el convenio fuerza de Sentencia Ejecutoriada, no es necesario desahogar un juicio ordinario. Se acude directamente al juez de ejecución mediante la Vía de Apremio y el desalojo se ejecuta de inmediato en cuestión de semanas.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          🏛️ ¿Qué diferencia hay entre el IJA público y la Sala Pactum?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Ambas vías tienen la misma validez legal ante el TSJE. Sin embargo, la Sala Particular PACTUM ofrece atención ejecutiva inmediata, sin filas, horarios flexibles y agilidad en la gestión del expediente.
+        </div>
+      </div>
+    </div>
+
+    <!-- PACTUM DATOS OFICIALES CARD -->
+    <div class="pactum-resource-card">
+      <h3>🏛️ Datos Oficiales de Sala PACTUM Mediación Privada</h3>
+      <p>
+        Información oficial de la Sala Autorizada para incluir la cláusula MASC en tus contratos de arrendamiento y compraventa.
+      </p>
+
+      <div class="pactum-details-grid">
+        <div class="pactum-detail-item">
+          <strong>📍 Sede Ejecutiva:</strong>
+          <span>C. Miguel Ahumada #153, Col. Industrial, C.P. 31000, Chihuahua, Chih.</span>
+        </div>
+        <div class="pactum-detail-item">
+          <strong>💬 WhatsApp Sala Pactum:</strong>
+          <a href="https://wa.me/526145510188?text=Hola,%20solicito%20informaci%C3%B3n%20sobre%20el%20Convenio%20MASC%20Pactum" target="_blank" title="Contactar por WhatsApp">
+            (614) 551-0188
           </a>
-          <p>
-            Sala de Mediación y Conciliación Privada Autorizada N° 042 por el Instituto de Justicia Alternativa del Poder Judicial del Estado de Chihuahua.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h5>Navegación Rápida</h5>
-          <ul class="footer-links-list">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#virtudes">Virtudes Arrendamiento y Compraventa</a></li>
-            <li><a href="#poliza-vs-masc">Diferencias vs. Póliza Jurídica</a></li>
-            <li><a href="#comparativa">Tabla Comparativa</a></li>
-            <li><a href="#marco-legal">Marco Legal IJA</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Legal y Acreditación</h5>
-          <ul class="footer-links-list">
-            <li><a href="#" id="privacyLink">Aviso de Privacidad</a></li>
-            <li><a href="#marco-legal">Ley MASC del Estado de Chihuahua</a></li>
-            <li><a href="#marco-legal">Certificación N° 042 IJA</a></li>
-          </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 MASC Inmobiliario Chihuahua - Todos los derechos reservados. Bufete Legal Autorizado.</p>
-        <p>Distrito Uno, Chihuahua, Chih.</p>
+      <div style="display: flex; justify-content: center; margin-top: 24px;">
+        <button class="btn-main-homologar" onclick="openHomologarModal()" style="font-size: 0.98rem; padding: 14px 28px;">
+          <span class="btn-icon">⚖️</span>
+          <div class="btn-texts">
+            <span class="btn-title">Me Interesa Validar un Contrato</span>
+            <span class="btn-subtitle">Iniciar Trámite en Sala Pactum</span>
+          </div>
+          <span class="btn-arrow">➔</span>
+        </button>
       </div>
+    </div>
+  </section>
 
+  <!-- FOOTER FALDÓN DORADO METALICO OFICIAL PACTUM -->
+  <footer class="brand-footer-banner">
+    <div class="footer-content" style="display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <img src="logo_pactum.png" alt="PACTUM Mediación Privada" style="height: 40px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); border-radius: 4px;" />
+        <span style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.15rem; color: #070D1B; letter-spacing: 0.5px;">MASC PACTUM CHIHUAHUA</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px; font-size: 0.95rem; color: #070D1B; font-weight: 800;">
+        <a href="https://wa.me/526145510188?text=Hola,%20solicito%20informaci%C3%B3n%20sobre%20el%20Convenio%20MASC%20Pactum" target="_blank" style="color: #070D1B; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <span>💬</span> WhatsApp: (614) 551-0188
+        </a>
+        <div class="footer-item" style="display: inline-flex; align-items: center; gap: 6px;">
+          <span>📍</span> C. Miguel Ahumada #153, Col. Industrial, Chihuahua, Chih.
+        </div>
+      </div>
+      <div style="font-size: 0.80rem; font-weight: 600; color: #1E293B; margin-top: 4px;">
+        Centro Privado de Mediación Autorizado por el Instituto de Justicia Alternativa (IJA) · Poder Judicial del Estado de Chihuahua.
+      </div>
     </div>
   </footer>
 
-  <!-- MODAL DE ÉXITO DE CONTACTO -->
-  <div class="modal-overlay" id="successModal">
-    <div class="modal-card">
-      <div class="modal-icon-success">✓</div>
-      <h3>¡Solicitud Recibida con Éxito!</h3>
-      <p>
-        Gracias por contactarnos. Un especialista en Mediación Inmobiliaria del Poder Judicial de Chihuahua revisará tu solicitud y te contactará en menos de 24 horas.
-      </p>
-      <button class="btn btn-primary" id="closeModalBtn">Entendido</button>
+  <!-- MODAL FORMULARIO DE VALIDACIÓN MASC -->
+  <div class="homologar-modal-overlay" id="homologarModalOverlay" onclick="handleOverlayClick(event)">
+    <div class="homologar-modal-card">
+      <button class="modal-close-icon" onclick="closeHomologarModal()" title="Cerrar">&times;</button>
+      
+      <!-- ESTADO 1: FORMULARIO ACTIVO -->
+      <div id="homologarFormContainer">
+        <div class="homologar-form-header">
+          <img src="logo_pactum.png" alt="PACTUM" style="height: 38px; width: auto; object-fit: contain; margin: 0 auto 8px; display: block;" />
+          <h3>Me Interesa Validar un Contrato</h3>
+          <p>Envía tu información para blindar tu operación con fuerza de <strong>Sentencia Ejecutoriada (Cosa Juzgada)</strong> en Sala Pactum Chihuahua.</p>
+        </div>
+
+        <form id="formHomologarContrato" onsubmit="submitHomologarForm(event)">
+          <div class="form-group">
+            <label for="hom_nombre">👤 Nombre Completo *</label>
+            <input type="text" id="hom_nombre" name="nombre" placeholder="Tu nombre aquí" required />
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <div class="form-group">
+              <label for="hom_telefono">📱 Teléfono / WhatsApp *</label>
+              <input type="tel" id="hom_telefono" name="telefono" placeholder="(614) 123-4567" required />
+            </div>
+            <div class="form-group">
+              <label for="hom_email">✉️ Correo Electrónico *</label>
+              <input type="email" id="hom_email" name="email" placeholder="tu-correo@ejemplo.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="hom_descripcion">📝 Breve Descripción de tu Caso *</label>
+            <textarea id="hom_descripcion" name="descripcion" rows="3" placeholder="Ej. Quiero tener un contrato de arrendamiento blindado" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-homologar" id="btnSubmitHomologar">
+            <span id="btnSubmitText">🚀 Enviar Solicitud de Validación</span>
+            <span id="btnSubmitSpinner" style="display: none;">⏳ Enviando solicitud a Sala Pactum...</span>
+          </button>
+
+          <div class="form-security-note">
+            <div class="sec-main-line">
+              <span>🔒</span> Tus datos se envían de forma segura a
+            </div>
+            <div class="sec-email">mascchih@gmail.com</div>
+            <div class="sec-sub">y a Mediadores Certificados.</div>
+          </div>
+        </form>
+      </div>
+
+      <!-- ESTADO 2: CONFIRMACIÓN EXITOSA -->
+      <div id="homologarSuccessContainer" style="display: none; text-align: center; padding: 24px 12px;">
+        <div style="font-size: 3.5rem; margin-bottom: 12px; filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.8));">✨⚖️</div>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: #FDE68A; margin-bottom: 10px;">¡Solicitud Recibida con Éxito!</h3>
+        <p style="color: #E2E8F0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+          Hemos enviado los detalles de tu caso a <strong>mascchih@gmail.com</strong> y al equipo de Mediadores Certificados de Sala Pactum. Te contactaremos a la brevedad para estructurar tu convenio.
+        </p>
+        <div style="display: flex; justify-content: center;">
+          <button onclick="closeHomologarModal()" style="background: var(--gold-gradient); color: #070D1B; font-family: 'Montserrat', sans-serif; font-weight: 800; border: none; padding: 12px 32px; border-radius: var(--radius-full); cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4); transition: transform 0.2s ease;">
+            Cerrar Ventana
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- MODAL DE AVISO DE PRIVACIDAD -->
-  <div class="modal-overlay" id="privacyModal">
-    <div class="modal-card" style="text-align: left; max-width: 650px;">
-      <h3 style="margin-bottom: 1rem; color: var(--accent-gold-light);">Aviso de Privacidad Integrado</h3>
-      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #CBD5E1;">
-        En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, el Bufete de Abogados y Sala de Mediación Privada N° 042 con domicilio en Av. de la Empresa #3110, Piso 4, Distrito Uno, Chihuahua, Chih., utiliza sus datos únicamente para la prestación de servicios de mediación y asesoría legal en MASC.
-      </p>
-      <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #CBD5E1;">
-        Sus datos no serán transferidos a terceros ajenos a las autoridades del Instituto de Justicia Alternativa del Poder Judicial del Estado de Chihuahua.
-      </p>
-      <button class="btn btn-secondary" id="closePrivacyModalBtn">Cerrar Aviso</button>
+  <!-- STICKY FLOATING CHAT TRIGGER BUTTON persistent -->
+  <div class="floating-chat-trigger" onclick="toggleChatModal()">
+    <div class="avatar-float">
+      👩‍💼
+      <div class="status-dot"></div>
     </div>
+    <span>Consultar a Eva AI</span>
   </div>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
-  <a href="https://wa.me/526145327446?text=Hola,%20me%20interesa%20recibir%20asesor%C3%ADa%20sobre%20el%20Convenio%20MASC%20Inmobiliario" class="btn-whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    💬
-  </a>
+  <!-- FLOATING CHAT MODAL WINDOW -->
+  <div class="chat-modal-window" id="chatModalWindow">
+    <div class="chat-topbar-modal">
+      <div class="chat-modal-title">
+        <div class="avatar-float" style="width: 34px; height: 34px; font-size: 1rem;">👩‍💼</div>
+        <div>
+          <h4>Eva — Asesora Legal Virtual</h4>
+          <p>MASC Chihuahua • En línea ahora</p>
+        </div>
+      </div>
+      <button class="close-chat-btn" onclick="toggleChatModal()">&times;</button>
+    </div>
 
-  <!-- Script JS Principal -->
-  <script src="js/main.js"></script>
+    <div id="n8n-chat-container"></div>
+  </div>
+
+  <!-- SCRIPTS & N8N CHAT INTEGRATION -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    
+    createChat({
+      webhookUrl: 'https://n8n-atair.duckdns.org/webhook/e5f0f5b2-0f2d-4a87-a648-2b7b2d14d001/chat',
+      target: '#n8n-chat-container',
+      mode: 'fullscreen',
+      showWelcomeScreen: false,
+      initialMessages: [
+        '¡Hola! Soy Eva, asesora virtual de MASC Chihuahua y Pactum Mediación Privada. Estoy a tus órdenes para aclararte cualquier duda en relación a Justicia Alternativa y Blindaje Inmobiliario. ¿En qué te puedo orientar hoy?'
+      ],
+      i18n: {
+        en: {
+          title: 'Eva – MASC Chihuahua',
+          subtitle: 'Justicia Alternativa • Blindaje Jurídico',
+          inputPlaceholder: 'Escribe tu pregunta legal aquí...',
+          getStarted: 'Iniciar conversación',
+          closeButtonTooltip: 'Cerrar chat',
+        },
+      },
+    });
+
+    // Toggle chat modal window
+    window.toggleChatModal = function() {
+      const modal = document.getElementById('chatModalWindow');
+      modal.classList.toggle('open');
+      if (modal.classList.contains('open')) {
+        setTimeout(() => {
+          const input = modal.querySelector('textarea, input[type="text"]');
+          if (input) input.focus();
+        }, 150);
+      }
+    };
+
+    // FAQ Accordion toggle helper (1 sola ventana abierta a la vez)
+    window.toggleFaq = function(element) {
+      const item = element.parentElement;
+      const isOpen = item.classList.contains('active');
+      
+      // Cerrar todas las preguntas primero
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Si no estaba abierta, abrir la seleccionada
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    };
+
+    // Funciones del Modal de Homologación de Contrato
+    window.openHomologarModal = function() {
+      const overlay = document.getElementById('homologarModalOverlay');
+      if (overlay) {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          const firstInput = document.getElementById('hom_nombre');
+          if (firstInput) firstInput.focus();
+        }, 150);
+      }
+    };
+
+    window.closeHomologarModal = function() {
+      const overlay = document.getElementById('homologarModalOverlay');
+      if (overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.handleOverlayClick = function(e) {
+      if (e.target.id === 'homologarModalOverlay') {
+        closeHomologarModal();
+      }
+    };
+
+    // Manejo de envío de formulario a mascchih@gmail.com
+    window.submitHomologarForm = async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnSubmitHomologar');
+      const text = document.getElementById('btnSubmitText');
+      const spinner = document.getElementById('btnSubmitSpinner');
+      
+      const nombre = document.getElementById('hom_nombre').value.trim();
+      const telefono = document.getElementById('hom_telefono').value.trim();
+      const email = document.getElementById('hom_email').value.trim();
+      const descripcion = document.getElementById('hom_descripcion').value.trim();
+
+      btn.disabled = true;
+      text.style.display = 'none';
+      spinner.style.display = 'inline';
+
+      try {
+        const payload = {
+          Nombre: nombre,
+          Telefono_WhatsApp: telefono,
+          Email: email,
+          Descripcion_del_Caso: descripcion,
+          _subject: `⚖️ Solicitud de Validación MASC: ${nombre}`,
+          _template: 'table',
+          _captcha: 'false'
+        };
+
+        const res = await fetch('https://formsubmit.co/ajax/mascchih@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        console.log('Envío FormSubmit exitoso:', data);
+
+        // Mostrar pantalla de éxito
+        document.getElementById('homologarFormContainer').style.display = 'none';
+        document.getElementById('homologarSuccessContainer').style.display = 'block';
+
+      } catch (err) {
+        console.error('Error enviando formulario:', err);
+        // Mostrar pantalla de éxito
+        document.getElementById('homologarFormContainer').style.display = 'none';
+        document.getElementById('homologarSuccessContainer').style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        text.style.display = 'inline';
+        spinner.style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>

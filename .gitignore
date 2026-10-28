@@ -1,30 +1,4 @@
-# Node & Build directories
-node_modules/
-dist/
-build/
-.vercel/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# System & OS Files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Environment variables
-.env
-.env.local
-.env.production
-.env.development
-
-# IDE & Editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-
 .vercel
+_historico_agosto/
+node_modules/
+.DS_Store
