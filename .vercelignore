@@ -1,0 +1,14 @@
+platica-gremio
+CANACO
+Fuente de Verdad
+workflows
+scripts
+assets_multimedia
+*.mp4
+*.m4a
+*.py
+*.md
+.env*
+_historico_agosto
+package.json
+server.js

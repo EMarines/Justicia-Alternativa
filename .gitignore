@@ -2,3 +2,15 @@
 _historico_agosto/
 node_modules/
 .DS_Store
+*.mp4
+*.m4a
+.env
+.env*
+platica-gremio/
+CANACO/
+Fuente de Verdad/
+workflows/
+scripts/
+assets_multimedia/
+04_Flyers_Semanales/
+*.py
