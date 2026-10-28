@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Presentación Sonora Interactiva — MASC PACTUM CHIHUAHUA</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="🎧 Presentación con Audio: Blindaje Inmobiliario MASC PACTUM Chihuahua" />
+  <meta name="description" content="Toca para escuchar: Cómo blindar rentas y ventas con fuerza de Sentencia Ejecutoriada (Cosa Juzgada) en Chihuahua con Sala PACTUM." />
+
+  <!-- Open Graph / WhatsApp / Facebook / Instagram / TikTok -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mascsite.vercel.app/podcast" />
+  <meta property="og:title" content="🎧 Toca para Escuchar: Blindaje Inmobiliario MASC PACTUM" />
+  <meta property="og:description" content="Presentación interactiva con audio (07:24) · Cosa Juzgada, Desalojo en 3–6 semanas y Comisiones Seguras. Sala PACTUM (614) 551-0188." />
+  <meta property="og:image" content="https://mascsite.vercel.app/og-image.jpg?v=20261028" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="icon" type="image/png" href="../logo_pactum.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep: #071124;
+      --bg-navy: #0F2347;
+      --gold: #D4AF37;
+      --gold-light: #FDE68A;
+      --gold-grad: linear-gradient(135deg, #FFF7DB 0%, #FDE68A 32%, #D4AF37 72%, #A16207 100%);
+      --cyan: #38BDF8;
+      --emerald: #10B981;
+      --danger: #F43F5E;
+      --text-white: #FFFFFF;
+      --text-muted: #CBD5E1;
+      --card-glass: rgba(13, 29, 61, 0.78);
+      --border-gold: rgba(212, 175, 55, 0.48);
+    }
+
+    html, body {
+      height: 100%;
+      background: radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.22) 0%, transparent 45%),
+                  radial-gradient(circle at 84% 18%, rgba(212, 175, 55, 0.25) 0%, transparent 45%),
+                  linear-gradient(180deg, #091731 0%, #050C1A 100%);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      padding: 12px;
+    }
+
+    /* MAIN VERTICAL DECK FRAME (9:16 social feel on desktop, full-bleed on mobile) */
+    .story-shell {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      min-height: min(860px, calc(100dvh - 24px));
+      background: linear-gradient(165deg, rgba(16, 36, 74, 0.95) 0%, rgba(7, 17, 36, 0.98) 100%);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 26px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.65), 0 0 40px rgba(212, 175, 55, 0.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    @media (max-width: 500px) {
+      body { padding: 0; }
+      .story-shell {
+        max-width: 100%;
+        min-height: 100dvh;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    /* TOP STORY PROGRESS BARS + BRAND HEADER */
+    .top-zone {
+      padding: 12px 16px 8px;
+      background: linear-gradient(180deg, rgba(5, 12, 26, 0.92) 0%, rgba(5, 12, 26, 0) 100%);
+      z-index: 10;
+    }
+
+    .story-bars {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .story-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 99px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .story-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--gold-grad);
+      border-radius: 99px;
+      transition: width 0.18s linear;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-left img {
+      height: 34px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+    }
+
+    .brand-titles h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 900;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-titles p {
+      font-size: 0.67rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .share-pill {
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 6px 11px;
+      border-radius: 99px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .share-pill:hover {
+      background: rgba(212, 175, 55, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* CHAPTER PILLS */
+    .chapter-strip {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 4px 16px 6px;
+      scrollbar-width: none;
+    }
+    .chapter-strip::-webkit-scrollbar { display: none; }
+
+    .chap-btn {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #CBD5E1;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .chap-btn.active {
+      background: var(--gold-grad);
+      color: #071124;
+      border-color: transparent;
+      font-weight: 800;
+      box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4);
+    }
+
+    /* SLIDES STAGE */
+    .slides-stage {
+      flex: 1;
+      position: relative;
+      padding: 8px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-card {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeSlide 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .slide-card.active {
+      display: flex;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(10px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .kicker-badge {
+      align-self: flex-start;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #7DD3FC;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .slide-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      font-weight: 900;
+      color: #FFFFFF;
+    }
+
+    .slide-title span.gold {
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-sub {
+      font-size: 0.84rem;
+      color: #E2E8F0;
+      line-height: 1.45;
+    }
+
+    .feature-box {
+      background: rgba(7, 17, 36, 0.68);
+      border: 1px solid rgba(212, 175, 55, 0.34);
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.8rem;
+      line-height: 1.38;
+      color: #F1F5F9;
+    }
+
+    .feature-icon {
+      font-size: 1rem;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+
+    /* VS COMPARISON BARS */
+    .vs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .vs-col {
+      border-radius: 14px;
+      padding: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .vs-col.bad {
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    .vs-col.good {
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.14);
+    }
+
+    .vs-tag {
+      font-size: 0.66rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .vs-col.bad .vs-tag { color: #FDA4AF; }
+    .vs-col.good .vs-tag { color: var(--gold-light); }
+
+    .vs-metric {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .vs-desc {
+      font-size: 0.73rem;
+      color: #CBD5E1;
+      line-height: 1.3;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 82px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--border-gold);
+    }
+
+    /* LIVE KARAOKE SUBTITLES + WAVEFORM AUDIO DECK */
+    .audio-deck {
+      margin: 4px 16px 8px;
+      background: rgba(5, 12, 26, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.42);
+      border-radius: 18px;
+      padding: 10px 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .live-caption {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.32;
+      padding: 2px 4px;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .wave-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .play-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: var(--gold-grad);
+      color: #071124;
+      font-size: 1.1rem;
+      font-weight: 900;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+      transition: transform 0.15s ease;
+    }
+
+    .play-btn:active { transform: scale(0.93); }
+
+    #waveCanvas {
+      flex: 1;
+      height: 36px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .time-badge {
+      font-size: 0.7rem;
+      font-variant-numeric: tabular-nums;
+      color: #CBD5E1;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .nav-slide-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #F8FAFC;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-slide-btn:hover { background: rgba(255, 255, 255, 0.18); }
+
+    .speed-btn {
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #7DD3FC;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 9px;
+      border-radius: 99px;
+      cursor: pointer;
+    }
+
+    /* OFFICIAL PACTUM CONTACT BANNER (ALWAYS VISIBLE) */
+    .pactum-footer {
+      background: var(--gold-grad);
+      color: #071124;
+      padding: 10px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pactum-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .pactum-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .pactum-info strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+    }
+
+    .pactum-info span {
+      font-size: 0.67rem;
+      font-weight: 700;
+      color: #1E293B;
+    }
+
+    .wa-cta-btn {
+      background: #071124;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 8px 13px;
+      border-radius: 99px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(7, 17, 36, 0.35);
+      transition: transform 0.15s ease;
+    }
+
+    .wa-cta-btn:hover { transform: scale(1.03); }
+
+    /* INITIAL CLICK-TO-LISTEN OVERLAY */
+    .start-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 35%, rgba(22, 49, 98, 0.96) 0%, rgba(5, 12, 26, 0.99) 100%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 28px 24px;
+      gap: 16px;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .start-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .start-logo {
+      height: 76px;
+      width: auto;
+      filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.55));
+    }
+
+    .pulse-ring-btn {
+      margin-top: 6px;
+      background: var(--gold-grad);
+      color: #071124;
+      border: none;
+      border-radius: 99px;
+      padding: 15px 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.96rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+      animation: pulseGold 1.9s infinite;
+    }
+
+    @keyframes pulseGold {
+      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); transform: scale(1); }
+      70% { box-shadow: 0 0 0 18px rgba(212, 175, 55, 0); transform: scale(1.03); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); transform: scale(1); }
+    }
+
+    .overlay-pactum-box {
+      margin-top: 8px;
+      padding: 10px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-gold);
+      font-size: 0.74rem;
+      color: #E2E8F0;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="story-shell">
+    <!-- CLICK-TO-PLAY COVER OVERLAY -->
+    <div class="start-overlay" id="startOverlay">
+      <img src="../logo_pactum_gold.png" alt="Sala PACTUM Chihuahua" class="start-logo" />
+      <span class="kicker-badge">🎧 Podcast & Presentación Interactiva</span>
+      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.48rem; font-weight: 900; line-height: 1.2;">
+        Blindaje Inmobiliario con Fuerza de <span style="color: var(--gold-light);">Cosa Juzgada</span>
+      </h2>
+      <p style="font-size: 0.86rem; color: #CBD5E1; max-width: 340px; line-height: 1.5;">
+        Toca el botón para escuchar la conversación mientras avanzan las 6 láminas ejecutivas (o desliza al tema que prefieras).
+      </p>
+
+      <button class="pulse-ring-btn" id="btnStartExperience">
+        <span>▶</span> Escuchar Presentación (07:24)
+      </button>
+
+      <div class="overlay-pactum-box">
+        <strong style="color: var(--gold-light);">🏛️ Sala PACTUM Mediación Privada</strong><br />
+        Autorizada por el IJA · Poder Judicial del Estado de Chihuahua<br />
+        📍 C. Miguel Ahumada #153, Col. Industrial · 💬 <strong>(614) 551-0188</strong>
+      </div>
+    </div>
+
+    <!-- TOP BARS & HEADER -->
+    <div class="top-zone">
+      <div class="story-bars" id="storyBars">
+        <div class="story-bar" onclick="jumpToSlide(0)"><div class="story-bar-fill" id="bar0"></div></div>
+        <div class="story-bar" onclick="jumpToSlide(1)"><div class="story-bar-fill" id="bar1"></div></div>
+        <div class="story-bar" onclick="jumpToSlide(2)"><div class="story-bar-fill" id="bar2"></div></div>
+        <div class="story-bar" onclick="jumpToSlide(3)"><div class="story-bar-fill" id="bar3"></div></div>
+        <div class="story-bar" onclick="jumpToSlide(4)"><div class="story-bar-fill" id="bar4"></div></div>
+        <div class="story-bar" onclick="jumpToSlide(5)"><div class="story-bar-fill" id="bar5"></div></div>
+      </div>
+
+      <div class="brand-row">
+        <a href="../index.html" class="brand-left" title="Ir al sitio completo MASC PACTUM">
+          <img src="../logo_pactum_gold.png" alt="PACTUM" />
+          <div class="brand-titles">
+            <h1>MASC PACTUM CHIHUAHUA</h1>
+            <p>Sala Privada Autorizada IJA · TSJE</p>
+          </div>
+        </a>
+        <button class="share-pill" onclick="sharePresentation()">
+          <span>📲</span> Compartir
+        </button>
+      </div>
+    </div>
+
+    <!-- CHAPTER SELECTOR PILLS -->
+    <div class="chapter-strip" id="chapterStrip">
+      <button class="chap-btn active" onclick="jumpToSlide(0)">1. IJA · TSJE</button>
+      <button class="chap-btn" onclick="jumpToSlide(1)">2. Cosa Juzgada</button>
+      <button class="chap-btn" onclick="jumpToSlide(2)">3. Desalojo Express</button>
+      <button class="chap-btn" onclick="jumpToSlide(3)">4. Compraventas</button>
+      <button class="chap-btn" onclick="jumpToSlide(4)">5. Comisiones</button>
+      <button class="chap-btn" onclick="jumpToSlide(5)">6. Sala Pactum</button>
+    </div>
+
+    <!-- 6 SYNCHRONIZED VISUAL SLIDES -->
+    <section class="slides-stage" id="slidesStage">
+
+      <!-- SLIDE 1: 00:00 - 02:16 -->
+      <article class="slide-card active" data-index="0">
+        <span class="kicker-badge">Lámina 1 de 6 · Respaldo Judicial</span>
+        <h2 class="slide-title">Chihuahua es Pionero: <span class="gold">Todo el Peso del Poder Judicial</span></h2>
+        <p class="slide-sub">No es un acuerdo informal de buena fe: está regulado y supervisado directamente por el Tribunal Superior de Justicia.</p>
+        <div class="feature-box">
+          <div class="feature-item">
+            <span class="feature-icon">🏛️</span>
+            <div><strong>Instituto de Justicia Alternativa (IJA):</strong> Órgano desconcentrado del TSJE de Chihuahua.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚖️</span>
+            <div><strong>Sustento Constitucional:</strong> Art. 17 Constitucional y Ley de Justicia Alternativa Estatal.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚡</span>
+            <div><strong>Cero Juzgados Saturados:</strong> Solución pacífica, humana y ejecutiva sin juicios eternos.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 2: 02:16 - 03:08 -->
+      <article class="slide-card" data-index="1">
+        <span class="kicker-badge">Lámina 2 de 6 · Blindaje Preventivo</span>
+        <h2 class="slide-title">El Poder de <span class="gold">"Cosa Juzgada"</span> desde el Minuto Cero</h2>
+        <p class="slide-sub">Se firma el mismo día que tu contrato de arrendamiento o promesa de compraventa, antes de cualquier conflicto.</p>
+        <div class="feature-box">
+          <div class="feature-item">
+            <span class="feature-icon">📜</span>
+            <div><strong>Fuerza de Sentencia Definitiva:</strong> Equivale legalmente a la resolución final dictada por un Juez Civil.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🛡️</span>
+            <div><strong>Inatacable:</strong> Sobre la Cosa Juzgada no caben apelaciones dilatorias ni juicios largos.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⏱️</span>
+            <div><strong>100% Preventivo:</strong> Blindas el inmueble desde el Día 1 de la operación.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 3: 03:08 - 04:20 -->
+      <article class="slide-card" data-index="2">
+        <span class="kicker-badge">Lámina 3 de 6 · Arrendamiento Seguro</span>
+        <h2 class="slide-title">Desalojo en Semanas vs. <span class="gold">Pólizas Jurídicas</span></h2>
+        <p class="slide-sub">La póliza tradicional solo paga un abogado para pelear 2 años en juzgados; MASC Pactum evita el juicio por completo.</p>
+        <div class="vs-grid">
+          <div class="vs-col bad">
+            <span class="vs-tag">❌ Juicio / Póliza</span>
+            <div class="vs-metric">12 a 24 Meses</div>
+            <p class="vs-desc">Desgaste, rentas perdidas y pleito ordinario saturado.</p>
+          </div>
+          <div class="vs-col good">
+            <span class="vs-tag">✅ MASC PACTUM</span>
+            <div class="vs-metric">3 a 6 Semanas</div>
+            <p class="vs-desc">Ejecución directa con juez por <strong>Vía de Apremio</strong>.</p>
+          </div>
+        </div>
+        <div class="feature-box" style="padding: 9px 12px;">
+          <div class="feature-item">
+            <span class="feature-icon">💰</span>
+            <div><strong>Cobro de Rentas Caídas:</strong> Solicitud directa de embargo de cuentas o bienes ante incumplimiento.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 4: 04:20 - 05:09 -->
+      <article class="slide-card" data-index="3">
+        <span class="kicker-badge">Lámina 4 de 6 · Compraventas</span>
+        <h2 class="slide-title">Escudo Legal Rumbo a la <span class="gold">Escritura Notarial</span></h2>
+        <p class="slide-sub">No sustituye al Notario Público: protege el periodo crítico entre la Promesa de Compraventa y la firma definitiva.</p>
+        <div class="feature-box">
+          <div class="feature-item">
+            <span class="feature-icon">🔑</span>
+            <div><strong>Entrega Física Garantizada:</strong> Certeza total en fechas y condiciones de entrega del inmueble.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📑</span>
+            <div><strong>Penalizaciones 100% Ejecutables:</strong> Si alguien se retracta, las cláusulas se ejecutan sin juicio.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🔍</span>
+            <div><strong>Vicios Ocultos:</strong> Canal privado, confidencial y ágil de mediación sin escándalos judiciales.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 5: 05:09 - 06:01 -->
+      <article class="slide-card" data-index="4">
+        <span class="kicker-badge">Lámina 5 de 6 · Gremio Inmobiliario</span>
+        <h2 class="slide-title">Oro Molido para Asesores: <span class="gold">Comisiones Blindadas</span></h2>
+        <p class="slide-sub">Eliminas el miedo del propietario y das trato digno y transparente al inquilino o comprador.</p>
+        <div class="feature-box">
+          <div class="feature-item">
+            <span class="feature-icon">🤝</span>
+            <div><strong>Cero Operaciones Caídas:</strong> Evitas que el trato se rompa a última hora por miedo o desconfianza.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🏆</span>
+            <div><strong>Diferenciador Premium:</strong> Ofreces cierres respaldados por el IJA y el Poder Judicial en Chihuahua.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💎</span>
+            <div><strong>Ganar-Ganar Real:</strong> Patrimonio seguro para el dueño + reglas claras para el cliente + tu comisión firme.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 6: 06:01 - 07:24 -->
+      <article class="slide-card" data-index="5">
+        <span class="kicker-badge">Lámina 6 de 6 · Cómo Ejecutarlo</span>
+        <h2 class="slide-title">3 Pasos Simples en <span class="gold">Sala Privada PACTUM</span></h2>
+        <div class="photo-strip">
+          <img src="../inauguracion_fachada_pactum.jpg" alt="Fachada Sala PACTUM Chihuahua" />
+          <img src="../inauguracion_corte_liston_pactum.jpg" alt="Inauguración Oficial Sala PACTUM" />
+        </div>
+        <div class="feature-box" style="padding: 10px 12px; gap: 6px;">
+          <div class="feature-item">
+            <span class="feature-icon">1️⃣</span>
+            <div>Redactas tu contrato habitual de renta o compraventa.</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">2️⃣</span>
+            <div>Agendas cita VIP sin filas en <strong>Sala PACTUM</strong> (`C. Miguel Ahumada #153`).</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">3️⃣</span>
+            <div>Firman el Convenio MASC con Facilitadores Certificados en un pago único.</div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- AUDIO WAVEFORM + SYNCHRONIZED SUBTITLES -->
+    <div class="audio-deck">
+      <div class="live-caption" id="liveCaption">
+        🎧 Presiona Play para escuchar el análisis inmobiliario completo...
+      </div>
+
+      <div class="wave-row">
+        <button class="play-btn" id="btnPlayPause" title="Reproducir / Pausar">▶</button>
+        <canvas id="waveCanvas" width="320" height="44" title="Toca para adelantar o retroceder"></canvas>
+        <span class="time-badge" id="timeBadge">00:00 / 07:24</span>
+      </div>
+
+      <div class="deck-controls">
+        <button class="nav-slide-btn" onclick="stepSlide(-1)">◀ Lámina Ant.</button>
+        <button class="speed-btn" id="btnSpeed" onclick="cycleSpeed()">Velocidad 1.0x</button>
+        <button class="nav-slide-btn" onclick="stepSlide(1)">Sig. Lámina ▶</button>
+      </div>
+    </div>
+
+    <!-- PERMANENT OFFICIAL PACTUM CONTACT FOOTER -->
+    <footer class="pactum-footer">
+      <div class="pactum-cta-row">
+        <div class="pactum-info">
+          <strong>🏛️ SALA PACTUM MEDIACIÓN PRIVADA</strong>
+          <span>📍 C. Miguel Ahumada #153, Col. Industrial, Chih.</span>
+        </div>
+        <a class="wa-cta-btn" href="https://wa.me/526145510188?text=Hola,%20escuch%C3%A9%20la%20presentaci%C3%B3n%20del%20Podcast%20MASC%20y%20quiero%20informaci%C3%B3n%20para%20validar%20un%20contrato%20en%20Sala%20Pactum" target="_blank">
+          <span>💬</span> (614) 551-0188
+        </a>
+      </div>
+    </footer>
+
+    <audio id="podcastAudio" src="podcast_masc_pactum.mp3" preload="metadata"></audio>
+  </main>
+
+  <script>
+    const SLIDES = [
+      { start: 0,   end: 136, title: '1. IJA · TSJE' },
+      { start: 136, end: 188, title: '2. Cosa Juzgada' },
+      { start: 188, end: 260, title: '3. Desalojo Express' },
+      { start: 260, end: 309, title: '4. Compraventas' },
+      { start: 309, end: 361, title: '5. Comisiones' },
+      { start: 361, end: 445, title: '6. Sala Pactum' }
+    ];
+
+    const CAPTIONS = [
+      [0, 10, "¡Hola! En el mundo inmobiliario en Chihuahua, la seguridad jurídica lo es literalmente todo."],
+      [10, 22, "Hoy desglosamos un salvavidas real: los Mecanismos Alternativos (MASC) en modalidad preventiva."],
+      [22, 38, "Veremos cómo blindar tu patrimonio con certeza absoluta en arrendamientos y compraventas."],
+      [38, 57, "Sección 1: El origen y evolución de la Justicia Alternativa en el Estado de Chihuahua."],
+      [57, 77, "Chihuahua fue pionero nacional desde 2006 y consolidó el Instituto de Justicia Alternativa en 2014."],
+      [77, 94, "No es un acuerdo informal: está supervisado por el IJA, órgano del Tribunal Superior de Justicia."],
+      [94, 114, "Al firmar en Sala Autorizada, tienes todo el peso legal del Poder Judicial respaldándote."],
+      [114, 136, "Los MASC nacieron para sacarnos de juzgados saturados y juicios hostiles de años."],
+      [136, 148, "Sección 2: Grábate este término clave — «COSA JUZGADA»."],
+      [148, 168, "Al firmar un Convenio MASC Preventivo, adquiere fuerza de Sentencia Definitiva desde el Día 1."],
+      [168, 188, "Se firma el mismo día que tu contrato de renta o promesa de compraventa: blindaje desde el minuto cero."],
+      [188, 206, "Sección 3: Un juicio civil ordinario tarda de 12 a 24 meses de desgaste, gastos y vueltas."],
+      [206, 218, "Con MASC Preventivo vas directo por Vía de Apremio: recuperación y desalojo en semanas."],
+      [218, 235, "Además, permite ejecución directa ante juez para cobrar o embargar por rentas caídas."],
+      [235, 249, "Ojo: las pólizas jurídicas tradicionales solo pagan un abogado para pelear 2 años en juicio."],
+      [249, 260, "Con MASC Pactum no peleas un juicio: el juez ejecuta de inmediato lo ya pactado."],
+      [260, 275, "Sección 4: En compraventas, asegura fecha exacta de entrega física del inmueble."],
+      [275, 290, "Penalizaciones 100% ejecutables si alguien se retracta y mediación privada en vicios ocultos."],
+      [290, 309, "Es el escudo perfecto entre la Promesa de Compraventa y la Escritura ante Notario Público."],
+      [309, 326, "Sección 5: Escenario Ganar-Ganar — el dueño protege su inmueble y el cliente recibe trato justo."],
+      [326, 345, "Para los Asesores Inmobiliarios, ofrecer respaldo del IJA · TSJE es un diferenciador premium."],
+      [345, 361, "Garantizas tus comisiones evitando que las operaciones se caigan por miedo del propietario."],
+      [361, 375, "Sección 6: ¿Cómo ejecutarlo? Paso 1: Redactas tu contrato habitual de renta o compraventa."],
+      [375, 387, "Paso 2 y 3: Acuden a Sala Privada Autorizada PACTUM y firman con Facilitadores Certificados."],
+      [387, 413, "Sin las filas de juzgados públicos: atención ejecutiva VIP mediante un pago único eficiente."],
+      [413, 445, "Blinda hoy tu patrimonio y tus comisiones en Sala PACTUM · WhatsApp (614) 551-0188."]
+    ];
+
+    const audio = document.getElementById('podcastAudio');
+    const overlay = document.getElementById('startOverlay');
+    const btnStart = document.getElementById('btnStartExperience');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const timeBadge = document.getElementById('timeBadge');
+    const liveCaption = document.getElementById('liveCaption');
+    const btnSpeed = document.getElementById('btnSpeed');
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let activeSlide = 0;
+    let speeds = [1.0, 1.2, 1.5];
+    let speedIdx = 0;
+    let audioCtx = null;
+    let analyser = null;
+    let freqData = null;
+
+    function fmt(sec) {
+      if (!isFinite(sec) || sec < 0) sec = 0;
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+
+    function initWebAudioIfHttp() {
+      if (audioCtx || window.location.protocol === 'file:') return;
+      try {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AC();
+        const src = audioCtx.createMediaElementSource(audio);
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 64;
+        src.connect(analyser);
+        analyser.connect(audioCtx.destination);
+        freqData = new Uint8Array(analyser.frequencyBinCount);
+      } catch (e) {
+        analyser = null;
+      }
+    }
+
+    function renderSlideUI(idx) {
+      activeSlide = idx;
+      document.querySelectorAll('.slide-card').forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.chap-btn').forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+    }
+
+    window.jumpToSlide = function(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= SLIDES.length) idx = SLIDES.length - 1;
+      renderSlideUI(idx);
+      audio.currentTime = SLIDES[idx].start + 0.1;
+      updateProgressUI();
+      if (audio.paused && overlay.classList.contains('hidden')) {
+        togglePlay();
+      }
+    };
+
+    window.stepSlide = function(delta) {
+      let next = activeSlide + delta;
+      if (next < 0) next = 0;
+      if (next >= SLIDES.length) next = SLIDES.length - 1;
+      jumpToSlide(next);
+    };
+
+    window.cycleSpeed = function() {
+      speedIdx = (speedIdx + 1) % speeds.length;
+      audio.playbackRate = speeds[speedIdx];
+      btnSpeed.textContent = 'Velocidad ' + speeds[speedIdx].toFixed(1) + 'x';
+    };
+
+    function togglePlay() {
+      initWebAudioIfHttp();
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      if (audio.paused) {
+        audio.play().then(() => {
+          btnPlayPause.textContent = '⏸';
+        }).catch(() => {});
+      } else {
+        audio.pause();
+        btnPlayPause.textContent = '▶';
+      }
+    }
+
+    btnStart.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      togglePlay();
+    });
+
+    btnPlayPause.addEventListener('click', togglePlay);
+
+    canvas.addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      const dur = audio.duration || 444;
+      audio.currentTime = ratio * dur;
+      updateProgressUI();
+    });
+
+    function updateProgressUI() {
+      const t = audio.currentTime || 0;
+      const dur = audio.duration || 444;
+      timeBadge.textContent = fmt(t) + ' / ' + fmt(dur);
+
+      // Find matching slide
+      for (let i = 0; i < SLIDES.length; i++) {
+        const s = SLIDES[i];
+        const fill = document.getElementById('bar' + i);
+        if (t >= s.end) {
+          fill.style.width = '100%';
+        } else if (t <= s.start) {
+          fill.style.width = '0%';
+        } else {
+          const pct = ((t - s.start) / (s.end - s.start)) * 100;
+          fill.style.width = pct.toFixed(1) + '%';
+          if (activeSlide !== i) renderSlideUI(i);
+        }
+      }
+
+      // Find matching caption
+      for (let c of CAPTIONS) {
+        if (t >= c[0] && t < c[1]) {
+          if (liveCaption.textContent !== c[2]) {
+            liveCaption.textContent = c[2];
+          }
+          break;
+        }
+      }
+    }
+
+    audio.addEventListener('timeupdate', updateProgressUI);
+    audio.addEventListener('ended', () => {
+      btnPlayPause.textContent = '▶';
+    });
+
+    // Draw live golden audio waveform + progress scrub
+    function drawLoop(ts) {
+      requestAnimationFrame(drawLoop);
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const bars = 36;
+      const gap = 3;
+      const barW = (w - gap * (bars - 1)) / bars;
+      const dur = audio.duration || 444;
+      const progress = (audio.currentTime || 0) / dur;
+
+      if (analyser && !audio.paused) {
+        analyser.getByteFrequencyData(freqData);
+      }
+
+      for (let i = 0; i < bars; i++) {
+        let amp = 0.18;
+        if (!audio.paused) {
+          if (analyser && freqData) {
+            const val = freqData[i % freqData.length] / 255;
+            amp = Math.max(0.16, val * 0.95);
+          } else {
+            // Smooth organic voice-like wave fallback (works on file:// too!)
+            const wave1 = Math.sin(ts * 0.008 + i * 0.55) * 0.35;
+            const wave2 = Math.cos(ts * 0.013 - i * 0.3) * 0.28;
+            amp = Math.max(0.16, Math.min(0.95, 0.45 + wave1 + wave2));
+          }
+        }
+        const bh = Math.max(5, amp * (h - 6));
+        const x = i * (barW + gap);
+        const y = (h - bh) / 2;
+        const played = (i / bars) <= progress;
+
+        ctx.fillStyle = played ? '#FDE68A' : 'rgba(255, 255, 255, 0.24)';
+        ctx.beginPath();
+        ctx.roundRect(x, y, barW, bh, 3);
+        ctx.fill();
+      }
+    }
+    requestAnimationFrame(drawLoop);
+
+    // Swipe gesture on mobile for carousel feel
+    let touchX = null;
+    const stage = document.getElementById('slidesStage');
+    stage.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].screenX; }, { passive: true });
+    stage.addEventListener('touchend', (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].screenX - touchX;
+      if (Math.abs(dx) > 48) {
+        stepSlide(dx < 0 ? 1 : -1);
+      }
+      touchX = null;
+    }, { passive: true });
+
+    window.sharePresentation = async function() {
+      const shareData = {
+        title: 'MASC PACTUM Chihuahua — Presentación Sonora Interactiva',
+        text: '🎧 Escucha en minutos cómo blindar rentas y compraventas en Chihuahua con fuerza de Cosa Juzgada en Sala PACTUM · WhatsApp (614) 551-0188:',
+        url: window.location.href
+      };
+      if (navigator.share) {
+        try { await navigator.share(shareData); return; } catch (_) {}
+      }
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('¡Enlace copiado! Listo para pegar en WhatsApp, Facebook, Instagram o TikTok.');
+      } catch (_) {}
+    };
+  </script>
+</body>
+</html>
